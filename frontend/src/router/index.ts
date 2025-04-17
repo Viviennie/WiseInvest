@@ -15,13 +15,14 @@ const routes:RouteRecordRaw[] = [
     { path: '/login', component: LoginVue },
     { path: '/resetpw', component: ResetPwVue },
     { path: '/create', component: CreateAccountVue },
-    { path: '/', component: LayoutVue, redirect:'/info',children:[
+    { path: '/', component: LayoutVue, redirect:'/login',children:[
             { path: '/info', component: UserInfoVue },
             { path: '/product', component: ProductVue },
             { path: '/subscription', component: SubscriptionVue },
             { path: '/redemption', component: RedemptionVue},
             { path: '/transactions', component: TransactionsVue }
-        ]}
+        ]},
+    { path: '/', redirect: '/login' },
 ]
 //创建路由器
 const router = createRouter({
