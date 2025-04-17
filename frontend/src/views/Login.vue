@@ -62,8 +62,8 @@ const rules = {
 // 模拟的用户数据
 const mockUsers = [
   {
-    phoneNumber: '12345678900',
-    password: '1234',
+    phoneNumber: '13345678900',
+    password: '123456',
     token: '123',
     userName: 'test user'
   }
@@ -142,7 +142,7 @@ const handleLogin = async () => {
 }
 
 .required-label::before {
-  content: '*';
+  content: '';
   color: #f56c6c;
   margin-right: 4px;
 }
