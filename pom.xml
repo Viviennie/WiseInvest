@@ -17,6 +17,8 @@
         <module>product-service</module>
         <module>settle-service</module>
         <module>transaction-service</module>
+        <module>recommendation-service</module>
+        <module>chatbot-service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
