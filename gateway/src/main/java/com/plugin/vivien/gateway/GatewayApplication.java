@@ -1,4 +1,4 @@
-package com.github.JLQusername.gateway;
+package com.plugin.vivien.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,12 +1,12 @@
-package com.github.JLQusername.transaction.domain.dto;
+package com.plugin.vivien.transaction.domain.dto;
 
 import lombok.Data;
 
 @Data
-public class RedemptionDTO {
+public class SubscriptionDTO {
     private String tradingAccountId;
     private long fundAccount;
     private int productId;
     private String productName;
-    private double shares;
+    private double amount;
 }

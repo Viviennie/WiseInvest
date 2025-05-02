@@ -1,2 +1,11 @@
 server:
   port: 8086
+fts:
+  db:
+    database: fts-transaction
+    host: 47.111.117.150
+    pw: SQLPASSWORD
+  swagger:
+    title: WiseInvest交易服务接口文档
+    description: WiseInvest交易服务接口文档
+    package: com.plugin.vivien.transaction.controller
