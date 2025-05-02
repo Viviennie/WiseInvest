@@ -1,4 +1,4 @@
-package com.github.JLQusername.transaction.domain.dto;
+package com.plugin.vivien.transaction.domain.dto;
 
 import lombok.Data;
 
