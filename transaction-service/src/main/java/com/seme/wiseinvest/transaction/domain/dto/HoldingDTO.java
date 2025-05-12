@@ -1,4 +1,4 @@
-package com.github.JLQusername.transaction.domain.dto;
+package com.seme.wiseinvest.transaction.domain.dto;
 
 import lombok.Data;
 

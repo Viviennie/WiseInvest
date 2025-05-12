@@ -1,2 +1,9 @@
 server:
   port: 8081
+fts:
+  db:
+    database: fts-account
+  swagger:
+    title: WiseInvest Account Service API Document
+    description: WiseInvest Account Service API Document
+    package: com.seme.wiseinvest.controller
