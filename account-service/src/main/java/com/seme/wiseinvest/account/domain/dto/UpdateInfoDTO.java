@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class UpdateInfoDTO {
-    private String username;
-    private String password;
-    private String email;
+    private String fundAccount;
+    private int riskLevel;
+    private String phoneNumber;
 }
