@@ -8,4 +8,4 @@ fts:
   swagger:
     title: WiseInvest账户服务接口文档
     description: WiseInvest账户服务接口文档
-    package: com.plugin.vivien.account.controller
+    package: com.seme.wiseinvest.controller

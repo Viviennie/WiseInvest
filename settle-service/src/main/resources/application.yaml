@@ -8,4 +8,4 @@ fts:
   swagger:
     title: WiseInvest清算服务接口文档
     description: WiseInvest清算服务接口文档
-    package: com.plugin.vivien.settle.controller
+    package: com.seme.wiseinvest.controller
