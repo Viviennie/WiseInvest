@@ -1,2 +1,9 @@
 server:
   port: 8086
+fts:
+  db:
+    database: fts-transaction
+  swagger:
+    title: WiseInvest Transaction Service API Document
+    description: WiseInvest Transaction Service API Document
+    package: com.seme.wiseinvest.controller

@@ -1,2 +1,9 @@
 server:
   port: 8085
+fts:
+  db:
+    database: fts-settle
+  swagger:
+    title: WiseInvest Settlement Service API Document
+    description: WiseInvest Settlement Service API Document
+    package: com.seme.wiseinvest.controller

@@ -1,2 +1,9 @@
 server:
   port: 8083
+fts:
+  db:
+    database: fts-product
+  swagger:
+    title: WiseInvest Product Service API Document
+    description: WiseInvest Product Service API Document
+    package: com.seme.wiseinvest.controller
