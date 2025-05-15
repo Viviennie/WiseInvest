@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class LoginDTO {
-    private String username;
+    private String phoneNumber;
     private String password;
+    private int userType; // 1: customer, 2: admin
 }
