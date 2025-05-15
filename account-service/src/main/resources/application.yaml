@@ -3,7 +3,9 @@ server:
 fts:
   db:
     database: fts-account
+    host: 47.111.117.150
+    pw: SQLPASSWORD
   swagger:
-    title: WiseInvest Account Service API Document
-    description: WiseInvest Account Service API Document
+    title: WiseInvest账户服务接口文档
+    description: WiseInvest账户服务接口文档
     package: com.seme.wiseinvest.controller

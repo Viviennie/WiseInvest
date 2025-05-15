@@ -3,7 +3,9 @@ server:
 fts:
   db:
     database: fts-settle
+    host: 47.111.117.150
+    pw: SQLPASSWORD
   swagger:
-    title: WiseInvest Settlement Service API Document
-    description: WiseInvest Settlement Service API Document
+    title: WiseInvest清算服务接口文档
+    description: WiseInvest清算服务接口文档
     package: com.seme.wiseinvest.controller
