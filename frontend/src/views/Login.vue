@@ -25,7 +25,7 @@
             <el-input v-model="loginForm.password" type="password" placeholder="请输入您的密码" />
           </el-form-item>
           <div class="button-group">
-            <el-button type="primary" @click="handleLogin" :loading="loading" class="login-button">登录</el-button>
+            <el-button type="primary" @click="login" class="login-button">登录</el-button>
             <el-button type="default" @click="router.push('/resetpw')" class="forget-button">忘记密码</el-button>
           </div>
           <el-button type="success" @click="router.push('/create')" class="register-button">开户</el-button>
@@ -35,73 +35,44 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
-import { useRouter } from 'vue-router'
-import { ElMessage } from 'element-plus'
+import { ref } from 'vue'; // 引入 ref 来创建响应式数据
+import { ElMessage, ElForm, ElFormItem, ElInput, ElButton, ElCard } from 'element-plus'; // 引入ElementPlus组件
+import { loginService } from '@/api/login';
+import type { LoginDTO, CustomerInfo } from '@/types/login';
+import { useTokenStore } from '@/stores/token';
+import { useUserInfoStore } from '@/stores/userInfo';
+import {jwtDecode } from 'jwt-decode';
+import { useRouter } from 'vue-router';
 
-const router = useRouter()
-const loginFormRef = ref()
-const loading = ref(false)
-
-const loginForm = reactive({
+// 定义响应式变量
+const loginForm = ref({
   phoneNumber: '',
-  password: ''
-})
+  password: '',
+  userType: 1,
+} as LoginDTO);
 
 const rules = {
   phoneNumber: [
     { required: true, message: '请输入手机号', trigger: 'blur' },
-    { pattern: /^1[3-9]\d{9}$/, message: '请输入正确的手机号', trigger: 'blur' }
+    { pattern: /^1\d{10}$/, message: '手机号必须是11位数字', trigger: 'blur' },
   ],
   password: [
     { required: true, message: '请输入密码', trigger: 'blur' },
-    { min: 6, message: '密码长度不能小于6位', trigger: 'blur' }
-  ]
-}
+  ],
+};
 
-// 模拟的用户数据
-const mockUsers = [
-  {
-    phoneNumber: '13345678900',
-    password: '123456',
-    token: '123',
-    userName: 'test user'
-  }
-]
+const tokenStore = useTokenStore();
+const userInfoStore = useUserInfoStore();
+const router = useRouter();
 
-const handleLogin = async () => {
-  if (!loginFormRef.value) return
-  
-  try {
-    await loginFormRef.value.validate()
-    loading.value = true
-    
-    // 模拟后端验证过程
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    const user = mockUsers.find(u => 
-      u.phoneNumber === loginForm.phoneNumber && 
-      u.password === loginForm.password
-    )
-    
-    if (user) {
-      // 保存用户信息到 localStorage
-      localStorage.setItem('token', user.token)
-      localStorage.setItem('userName', user.userName)
-      
-      ElMessage.success('登录成功')
-      // 登录成功后跳转到产品页面
-      router.push('/product')
-    } else {
-      ElMessage.error('手机号或密码错误')
-    }
-  } catch (error) {
-    console.error('登录验证失败:', error)
-    ElMessage.error('请检查输入是否正确')
-  } finally {
-    loading.value = false
-  }
-}
+const login = async () => {
+  const res = await loginService(loginForm.value);
+  tokenStore.setToken(res.data);
+  const decode = jwtDecode(res.data) as {claims: CustomerInfo};
+  userInfoStore.setInfo(decode.claims);
+  ElMessage.success("登录成功");
+  router.push('/info');
+};
 </script>
 
 <style scoped>

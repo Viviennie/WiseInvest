@@ -10,11 +10,12 @@ import SettleVue from '@/views/Layout/Settle.vue';
 const routes:RouteRecordRaw[] = [
     { path: '/login', component: LoginVue },
     { path: '/resetpw', component: ResetPwVue },
-    { path: '/', component: LayoutVue, redirect:'/info',children:[
-            { path: '/info', component: UserInfoVue },
-            { path: '/product', component: ProductVue },
-            { path: '/settle', component: SettleVue }
-        ]}
+    { path: '/', component: LayoutVue, redirect:'/login',children:[
+        { path: '/info', component: UserInfoVue },
+        { path: '/product', component: ProductVue },
+        { path: '/settle', component: SettleVue }
+        ]},
+    { path: '/', redirect: '/login' }
 ]
 //创建路由器
 const router = createRouter({

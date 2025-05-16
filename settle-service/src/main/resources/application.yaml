@@ -3,7 +3,7 @@ server:
 fts:
   db:
     database: fts-settle
-    host: 47.111.117.150
+    host: 172.25.197.196
     pw: SQLPASSWORD
   swagger:
     title: WiseInvest清算服务接口文档

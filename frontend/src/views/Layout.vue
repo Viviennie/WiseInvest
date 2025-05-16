@@ -1,11 +1,11 @@
 <script setup>
-import { ref } from 'vue'
-import { ElContainer, ElAside, ElMenu, ElMenuItem, ElHeader, ElMain, ElFooter } from 'element-plus';
-import { useUserInfoStore } from '@/stores/userInfo';
-import router from '@/router';
-const userInfoStore = useUserInfoStore();
-const userInfo = userInfoStore.info;
-const form = ref({ ...userInfo });
+  import { ref } from 'vue'
+  import { ElContainer, ElAside, ElMenu, ElMenuItem, ElHeader, ElMain, ElFooter } from 'element-plus';
+  import { useUserInfoStore } from '@/stores/userInfo';
+  import router from '@/router';
+  const userInfoStore = useUserInfoStore();
+  const userInfo = userInfoStore.info;
+  const form = ref({ ...userInfo });
 </script>
 
 <template>
