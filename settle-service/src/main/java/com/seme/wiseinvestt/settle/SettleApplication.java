@@ -1,12 +1,12 @@
-package com.plugin.vivien.settle;
+package com.seme.wiseinvestt.settle;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
-@EnableFeignClients(basePackages = "com.plugin.vivien.api.client")
-@MapperScan("com.plugin.vivien.settle.mapper")
+@EnableFeignClients(basePackages = "com.seme.wiseinvestt.api.client")
+@MapperScan("com.seme.wiseinvestt.settle.mapper")
 @SpringBootApplication
 public class SettleApplication {
     public static void main(String[] args) {
