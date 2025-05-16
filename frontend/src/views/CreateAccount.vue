@@ -56,96 +56,118 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import { ElMessage, ElMessageBox } from 'element-plus';
-import { useRouter } from 'vue-router';
-import RiskAssessment from '@/components/RiskAssessment.vue';
-
-// 表单数据模型
-const form = ref({
-  phoneNumber: '',
-  password: '',
-  idNumber: '',
-  name:'',
-  riskLevel:0,
-  confirmPassword:'',
-  bankcardNumber:'',
-  code:'',
-});
-
-const router = useRouter();
-const isTestLevel = ref(false);
-const isBankcardNumber = ref(false);
-
-// 表单验证规则
-const rules = {
-  phoneNumber: [
-    { required: true, message: '手机号不能为空', trigger: 'blur' },
-    { pattern: /^1\d{10}$/, message: '手机号必须是11位数字', trigger: 'blur' },
-  ],
-  password: [
-    { required: true, message: '密码不能为空', trigger: 'blur' },
-    { min: 3, max: 16, message: '密码长度在6到16位之间', trigger: 'blur' },
-  ],
-  idNumber: [
-    { required: true, message: '身份证号码不能为空', trigger: 'blur' },
-    { pattern: /^\d{17}(\d|X|x)$/, message: '请输入有效的身份证号码', trigger: 'blur' }
-  ],
-  name: [
-    { required: true, message: '姓名不能为空', trigger: 'blur' },
-  ],
-  bankcardNumber:[
-    { required: true, message: '银行卡号不能为空', trigger: 'blur' },
-    { pattern: /^\d{16}$/, message: '银行卡号必须是16位数字', trigger: 'blur' },
-  ],
-  code: [
-    { required: true, message: '请输入验证码', trigger: 'blur' }
-  ],
-  confirmPassword:[
-    { required: true, message: '请确认密码', trigger: 'blur' }
-  ]
-};
-const formRef = ref();
-
-const sendCodeService = () => {
-  setTimeout(() => {
-    ElMessage.success('验证码已发送');
-  }, 500);
-};
-
-const handleSubmit = async() => {
-  formRef.value.validate(async (valid: boolean) => {
-    if (valid) {
-      if(form.value.password === ''){
-        ElMessage.warning('密码不可以为空');
-        return;
-      }
-      if(form.value.code !== '123'){
-        ElMessage.error('验证码错误');
-        return;
-      }
-      if(form.value.password !== form.value.confirmPassword) {
-        ElMessage.error('两次密码不一致');
-      } else {
-        ElMessageBox.confirm('是否确认开户？', '提示', {
-          confirmButtonText: '确定',
-          cancelButtonText: '取消',
-          type: 'warning',
-        }).then(() => {
-          // 模拟注册成功
-          ElMessage.success('开户成功');
-          router.push('/login');
-        });
-      }
-    } else {
-      ElMessage.error('请输入正确的信息');
-    }
+  import { ref } from 'vue';
+  import { ElMessage, ElMessageBox } from 'element-plus';
+  import { useRouter } from 'vue-router';
+  import RiskAssessment from '../components/RiskAssessment.vue';
+  import { createAccountService, addBankcardService } from '../api/account';
+  // 表单数据模型
+  const form = ref({
+    phoneNumber: '',
+    password: '',
+    idNumber: '',
+    name: '',
+    riskLevel: 0,
+    confirmPassword: '',
+    bankcardNumber: '',
+    code: '',
   });
-};
 
-const handleLevelChange = (level: number) => {
-  form.value.riskLevel = level;
-};
+  const router = useRouter();
+  const isTestLevel = ref(true); 
+  const isBankcardNumber = ref(true); 
+
+  // 表单验证规则
+  const rules = {
+    phoneNumber: [
+      { required: true, message: '手机号不能为空', trigger: 'blur' },
+      { pattern: /^1\d{10}$/, message: '手机号必须是11位数字', trigger: 'blur' },
+    ],
+    password: [
+      { required: true, message: '密码不能为空', trigger: 'blur' },
+      { min: 3, max: 16, message: '密码长度在6到16位之间', trigger: 'blur' }, 
+    ],
+    idNumber: [
+      { required: true, message: '身份证号码不能为空', trigger: 'blur' },
+      { pattern: /^\d{17}(\d|X|x)$/, message: '请输入有效的身份证号码', trigger: 'blur' }
+    ],
+    name: [
+      { required: true, message: '姓名不能为空', trigger: 'blur' },
+    ],
+    bankcardNumber: [
+      { required: true, message: '银行卡号不能为空', trigger: 'blur' },
+      { pattern: /^\d{16}$/, message: '银行卡号必须是16位数字', trigger: 'blur' }, 
+    ],
+    code: [
+      { required: true, message: '请输入验证码', trigger: 'blur' }
+    ],
+    confirmPassword: [
+      { required: true, message: '请确认密码', trigger: 'blur' },
+      {
+        validator: (rule: any, value: any, callback: any) => {
+          if (value === '') {
+            callback(new Error('请再次输入密码'));
+          } else if (value !== form.value.password) {
+            callback(new Error('两次输入密码不一致!'));
+          } else {
+            callback();
+          }
+        },
+        trigger: 'blur'
+      }
+    ]
+  };
+  const formRef = ref();
+
+  const sendCodeService =  () => {
+    setTimeout(() => {
+      ElMessage.success('验证码已发送');
+      }, 500);
+  };
+
+  const handleSubmit = async() => {
+    formRef.value.validate(async (valid: boolean) => {
+      if (valid) {
+        if(form.value.password === ''){
+          ElMessage.warning('密码不可以为空');
+          return;
+        }
+        if(form.value.code !== '123'){
+          ElMessage.error('验证码错误');
+          return;
+        }
+        if(form.value.password !== form.value.confirmPassword)
+          ElMessage.error('两次密码不一致');
+        else
+          ElMessageBox.confirm('是否确认开户？', '提示', {
+            confirmButtonText: '确定',
+            cancelButtonText: '取消',
+            type: 'warning',
+          }).then(async () => {
+            let res = await createAccountService({
+                phoneNumber: form.value.phoneNumber,
+                password: form.value.password,
+                name: form.value.name,
+                idNumber: form.value.idNumber,
+                riskLevel: isTestLevel.value ? form.value.riskLevel : 0,
+            });
+            ElMessage.success('开户成功');
+            router.push('/login');
+            if(isBankcardNumber)
+              await addBankcardService({
+                bankcardNumber: form.value.bankcardNumber,
+                fundAccount: res.data,
+            });
+          })
+      }else{
+        ElMessage.error('请输入正确的信息');
+      }
+    });
+  };
+
+  const handleLevelChange = (level: number) => {
+    form.value.riskLevel = level;
+  };
 </script>
 
 <style scoped>

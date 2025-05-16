@@ -4,20 +4,20 @@ export interface CustomerDTO {
     name: string;
     password: string;
     idNumber: string;
-}
-
-export interface BankcardDTO {
+  }
+  
+  export interface BankcardDTO {
     fundAccount: string;
     bankcardNumber: string;
-}
-
-export interface BankcardVO {
+  }
+  
+  export interface BankcardVO {
     tradingAccount: string;
     bankcardNumber: string;
-}
-
-export interface UpdateInfoDTO {
+  }
+  
+  export interface UpdateInfoDTO {
     phoneNumber: string;
     riskLevel: number;
     fundAccount: string;
-}
+  }
