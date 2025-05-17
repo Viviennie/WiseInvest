@@ -8,4 +8,4 @@ fts:
   swagger:
     title: WiseInvest交易服务接口文档
     description: WiseInvest交易服务接口文档
-    package: com.seme.wiseinvest.controller
+    package: com.seme.wiseinvest.transaction.controller
