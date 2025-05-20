@@ -29,7 +29,7 @@
     <el-container>
       <!-- 头部区域 -->
       <el-header>
-        <div>欢迎 {{ form.name }} 进入系统 基金帐号：{{ form.fundAccount }}</div>
+        <div>欢迎 {{ form.name }} 进入系统  基金帐号：{{ form.fundAccount }}</div>
       </el-header>
       <!-- 中间区域 -->
       <el-main>

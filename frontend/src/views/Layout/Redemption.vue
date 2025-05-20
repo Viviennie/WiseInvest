@@ -74,7 +74,10 @@ const handleDialogClose = () => {
 
 <template>
   <div class="subscription-container">
-    <h3 style="padding-top: 40px; text-align: center; color: #0b407ce0; padding-bottom: 60px; ">同济基金交易系统 基金赎回页面</h3>
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <img src="@/assets/logo.png" alt="WiseInvest" class="logo-img" style="width: 120px; height: 60px; margin-right: 10px;">
+      <h3 style="padding-top: 0; padding-bottom: 0; margin: 0; color: #0b407ce0; font-size: 1.25em;">基金赎回页面</h3>
+    </div>
     <el-form :model="form" label-width="150px" class="form-container">
       <!-- 产品名 -->
       <el-form-item label="产品名">
