@@ -121,7 +121,10 @@ const logout = () => {
 
 <template>
   <div class="personal-info-container">
-    <h3 style="padding: 30px; text-align: center; color: #0b407ce0;">Wise Invest 个人信息界面</h3>
+    <div style="display: flex; align-items: center; justify-content: center;margin-left: -300px">
+      <img src="@/assets/logo.png" alt="WiseInvest" class="logo-img" style="width: 120px; height: 60px; margin-right: 10px;">
+      <h3 style="padding-top: 0; padding-bottom: 0; margin: 0; color: #0b407ce0; font-size: 1.25em;">个人信息页面</h3>
+    </div>
     <el-form :model="form" label-width="120px" class="form-container">
       <!-- 姓名 -->
       <el-form-item label="姓名">
