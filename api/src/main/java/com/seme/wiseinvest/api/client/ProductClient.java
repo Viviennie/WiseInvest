@@ -1,6 +1,7 @@
 package com.seme.wiseinvest.api.client;
 
 import com.seme.wiseinvest.api.NetValue;
+import com.seme.wiseinvest.common.domain.Result;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,4 +26,6 @@ public interface ProductClient {
     @PostMapping("/product/net_value/{productId}/{date}")
     Double getNetValue(@PathVariable("productId") Integer productId,
                        @PathVariable("date") Date date);
+    @GetMapping("/product/list")
+    Result getAllProducts();
 }

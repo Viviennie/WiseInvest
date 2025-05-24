@@ -74,8 +74,8 @@
   });
 
   const router = useRouter();
-  const isTestLevel = ref(true); 
-  const isBankcardNumber = ref(true); 
+  const isTestLevel = ref(true); //默认为true
+  const isBankcardNumber = ref(true); //默认为true
 
   // 表单验证规则
   const rules = {
@@ -119,12 +119,14 @@
   };
   const formRef = ref();
 
+  //发送验证码逻辑
   const sendCodeService =  () => {
     setTimeout(() => {
       ElMessage.success('验证码已发送');
       }, 500);
   };
 
+  //注册提交逻辑
   const handleSubmit = async() => {
     formRef.value.validate(async (valid: boolean) => {
       if (valid) {
@@ -164,6 +166,7 @@
       }
     });
   };
+
 
   const handleLevelChange = (level: number) => {
     form.value.riskLevel = level;
