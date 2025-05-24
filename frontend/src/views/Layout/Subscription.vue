@@ -74,7 +74,10 @@ const handleDialogClose = () => {
 
 <template>
   <div class="subscription-container">
-    <h3 style="padding-top: 40px; text-align: center; color: #0b407ce0; padding-bottom: 60px; ">同济基金交易系统 基金申购页面</h3>
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <img src="@/assets/logo.png" alt="WiseInvest" class="logo-img" style="width: 120px; height: 60px; margin-right: 10px;">
+      <h3 style="padding-top: 0; padding-bottom: 0; margin: 0; color: #0b407ce0; font-size: 1.25em;">基金申购页面</h3>
+    </div>
     <el-form :model="form" label-width="150px" class="form-container">
       <!-- 产品名 -->
       <el-form-item label="产品名">
@@ -118,6 +121,11 @@ const handleDialogClose = () => {
   padding: 2px;
   background-color: #cad1d82e;
   min-height: 86.4vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 使子元素水平居中 */
+  gap: 60px; /* 新增：设置子元素垂直间距 */
+  padding: 20px 0; /* 可选：增加容器内边距 */
 }
 
 .form-container {

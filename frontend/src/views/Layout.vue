@@ -28,8 +28,13 @@
     <!-- 右侧主区域 -->
     <el-container>
       <!-- 头部区域 -->
-      <el-header>
-        <div>欢迎 {{ form.name }} 进入系统 基金帐号：{{ form.fundAccount }}</div>
+      <el-header class="main-header">
+        <div class="header-container">
+          <img src="@/assets/logo.png" alt="Logo" class="header-logo">
+          <div>
+            欢迎 {{ form.name }} 进入系统 基金帐号：{{ form.fundAccount }}
+          </div>
+        </div>
       </el-header>
       <!-- 中间区域 -->
       <el-main>
@@ -92,5 +97,28 @@
   font-size: 18px;
   color: #f6bc00;
   background-color: #2E5077;
+}
+
+.main-header {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  height: 80px !important; /* 覆盖默认高度 */
+  background: #f8f9fa;
+}
+.header-container {
+  display: flex;
+  align-items: center;  /* 垂直居中 */
+  gap: 20px;           /* 元素间距 */
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.header-logo {
+  width: 60px;         /* 根据实际尺寸调整 */
+  height: 60px;        /* 保持正方形比例 */
+  object-fit: contain; /* 防止图片变形 */
 }
 </style>

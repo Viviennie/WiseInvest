@@ -17,3 +17,6 @@ export function fetchNetValue(productId: number, date: string) {
 export function fetchTransactionDate() {
     return request.get('/settle/settle/system/transaction-date');
 }
+export const fetchRecommendations = () => {
+    return request.get('/recommendation/recommendations');
+};

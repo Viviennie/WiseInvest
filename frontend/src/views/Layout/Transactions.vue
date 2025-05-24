@@ -44,6 +44,10 @@ const cancel = async (transactionId: string) => {
 
 <template>
   <el-card style="width: 99.9%; height: 99.8%;">
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <img src="@/assets/logo.png" alt="WiseInvest" class="logo-img" style="width: 120px; height: 60px; margin-right: 10px;">
+      <h3 style="padding-top: 0; padding-bottom: 0; margin: 0; color: #0b407ce0; font-size: 1.25em;">产品交易记录页面</h3>
+    </div>
     <el-table :data="Transactions" style="width: 100%;">
       <el-table-column prop="transactionId" label="交易 ID" align="center"></el-table-column>
       <el-table-column prop="productName" label="产品名称" align="center"></el-table-column>
