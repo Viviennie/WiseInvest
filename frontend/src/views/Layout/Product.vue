@@ -4,31 +4,38 @@ import { ElMessage } from 'element-plus';
 import { fetchProducts, searchProducts, fetchNetValue, fetchTransactionDate } from '@/api/product';
 import type { Product } from '@/types/product';
 import { useRoute, useRouter } from 'vue-router';
-import { fetchRecommendations } from '@/api/product'; // 新增api导入
+import { fetchRecommendations } from '@/api/product'; // 导入推荐商品 API
 import { ArrowDownBold } from '@element-plus/icons-vue'
 
+// 搜索相关响应式变量
 const searchKeyword = ref('');
+const appliedSearchKeyword = ref('');
+
+// 产品展示相关响应式变量
 const products = ref<Product[]>([]);
 const totalProducts = ref(0);
 const currentPage = ref(1);
 const pageSize = ref(10);
-const appliedSearchKeyword = ref('');
+
+// 对话框相关变量
 const dialogVisible = ref(false);
 const selectedProduct = ref<Product | null>(null);
 const selectedProductNetValue = ref<number | null>(null);
+
+// 当前交易日
 const transactionDate = ref<string | null>(null);
+
+// 路由对象
 const router = useRouter();
 const route = useRoute();
 
+// 推荐产品相关变量
 const recommendedCurrentPage = ref(1);
 const recommendedPageSize = ref(5);
 const recommendedTotal = ref(0);
+const recommendedProducts = ref<Product[]>([]); // 推荐商品列表
 
-
-
-const recommendedProducts = ref<Product[]>([]); // 新增推荐商品列表
-
-// Update paginatedProducts as computed property
+// 当前页展示的产品（分页 + 搜索过滤）
 const paginatedProducts = computed(() => {
   let filteredProducts = products.value;
   if (appliedSearchKeyword.value) {
@@ -39,7 +46,7 @@ const paginatedProducts = computed(() => {
   return filteredProducts.slice((currentPage.value - 1) * pageSize.value, currentPage.value * pageSize.value);
 });
 
-// Search handler
+// 搜索处理函数
 const handleSearch = async () => {
   if (searchKeyword.value.trim()) {
     try {
@@ -51,12 +58,12 @@ const handleSearch = async () => {
       ElMessage.error('搜索失败');
     }
   } else {
-    loadProducts();
+    loadProducts(); // 搜索词为空时恢复默认加载
     appliedSearchKeyword.value = '';
   }
 };
 
-// Load products
+// 加载产品数据
 const loadProducts = async () => {
   try {
     const res = await fetchProducts(currentPage.value, pageSize.value);
@@ -68,11 +75,11 @@ const loadProducts = async () => {
   }
 };
 
-// Show product details
+// 查看产品详情
 const showProductDetails = async (product: Product) => {
   selectedProduct.value = product;
   try {
-    if(!product.productId || !transactionDate.value){
+    if (!product.productId || !transactionDate.value) {
       return ElMessage.error('获取交易日期失败');
     }
     const res = await fetchNetValue(product.productId, transactionDate.value);
@@ -84,18 +91,18 @@ const showProductDetails = async (product: Product) => {
   dialogVisible.value = true;
 };
 
-// Clear selected product
+// 清除选中的产品
 const clearSelectedProduct = () => {
   selectedProduct.value = null;
 };
 
-// Handle page change
+// 分页变化处理
 const handlePageChange = (newPage: number) => {
   currentPage.value = newPage;
   loadProducts();
 };
 
-// Get transaction date
+// 获取交易日
 const getTransactionDate = async () => {
   try {
     const res = await fetchTransactionDate();
@@ -106,8 +113,8 @@ const getTransactionDate = async () => {
   }
 };
 
-// Level function
-const Level = (level:number | undefined) => {
+// 风险等级转换
+const Level = (level: number | undefined) => {
   switch (level) {
     case 0: return '低风险型';
     case 1: return '中低风险型';
@@ -117,11 +124,10 @@ const Level = (level:number | undefined) => {
   }
 };
 
-
-// 新增获取推荐商品方法
+// 获取推荐商品列表
 const getRecommendedProducts = async () => {
   try {
-    const token = localStorage.getItem('token'); // 假设token存储在localStorage
+    const token = localStorage.getItem('token'); // 假设token存在 localStorage 中
     if (!token) {
       ElMessage.error('请先登录');
       return;
@@ -133,28 +139,33 @@ const getRecommendedProducts = async () => {
       }
     });
     recommendedProducts.value = res.data as Product[];
-    recommendedTotal.value = recommendedProducts.value.length;  // 设置总条数
+    recommendedTotal.value = recommendedProducts.value.length;
   } catch (error) {
     ElMessage.error('获取推荐商品失败');
   }
 };
+
+// 推荐分页计算
 const recommendedPaginated = computed(() => {
   const start = (recommendedCurrentPage.value - 1) * recommendedPageSize.value;
   const end = start + recommendedPageSize.value;
   return recommendedProducts.value.slice(start, end);
 });
 
+// 推荐分页变化处理
 const handleRecommendedPageChange = (newPage: number) => {
   recommendedCurrentPage.value = newPage;
 };
 
+// 页面挂载时初始化加载
 onMounted(() => {
   loadProducts();
   getTransactionDate();
-  getRecommendedProducts(); // 新增获取推荐商品
+  getRecommendedProducts();
 });
 
-const subscription = (productId:number,productName:string) => {
+// 跳转申购页
+const subscription = (productId: number, productName: string) => {
   router.push({
     path: '/subscription',
     query: {
@@ -164,7 +175,8 @@ const subscription = (productId:number,productName:string) => {
   });
 };
 
-const redemption = (productId:number,productName:string) => {
+// 跳转赎回页
+const redemption = (productId: number, productName: string) => {
   router.push({
     path: '/redemption',
     query: {
@@ -173,9 +185,8 @@ const redemption = (productId:number,productName:string) => {
     },
   });
 };
-
-
 </script>
+
 
 <template>
   <el-card class="main-container">
