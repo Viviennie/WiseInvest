@@ -74,7 +74,8 @@ const handleDialogClose = () => {
 
 <template>
   <div class="subscription-container">
-    <div style="display: flex; align-items: center; justify-content: center;">
+
+    <div style="display: flex; align-items: center; justify-content: center;margin-left: -300px">
       <img src="@/assets/logo.png" alt="WiseInvest" class="logo-img" style="width: 120px; height: 60px; margin-right: 10px;">
       <h3 style="padding-top: 0; padding-bottom: 0; margin: 0; color: #0b407ce0; font-size: 1.25em;">基金申购页面</h3>
     </div>
