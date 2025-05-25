@@ -56,7 +56,7 @@ const form = ref({ ...userInfo });
             欢迎 {{ form.name }} 进入系统 基金帐号：{{ form.fundAccount }}
           </div>
         </div>
-
+      </el-header>
 
       <!-- 主体内容区域：动态渲染子路由页面 -->
       <el-main>
