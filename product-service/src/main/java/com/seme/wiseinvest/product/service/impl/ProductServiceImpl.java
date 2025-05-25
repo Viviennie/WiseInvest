@@ -61,9 +61,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 
         // 获取 OurSystem 对象
         OurSystem ourSystem = settleClient.getSystem();
-
-
-// 创建 NetValue 对象并设置属性
+       // 创建 NetValue 对象并设置属性
         NetValue netValue = new NetValue();
         netValue.setProductId(product.getProductId());
         netValue.setDate(ourSystem.getTransactionDate()); // 假设 setDate 接受 LocalDate 类型
@@ -77,8 +75,6 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
             e.printStackTrace();
             return false;
         }
-
-
 
     }
 

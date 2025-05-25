@@ -1,7 +1,7 @@
 // useTokenStore.ts
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
-import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
+//import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 
 /*
 defineStore参数描述：

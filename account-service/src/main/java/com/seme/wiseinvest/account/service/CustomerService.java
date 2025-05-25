@@ -17,4 +17,5 @@ public interface CustomerService extends IService<Customer> {
 
     List<CustomerVO> getCustomers(int pageNum, int pageSize, String key);
 
+    Customer findCustomerByFundAccount(Long fundAccount);
 }

@@ -193,6 +193,7 @@ const logout = () => {
   padding: 2px;
   background-color: #cad1d82e;
   min-height: 86.4vh;
+
 }
 
 .form-container {
