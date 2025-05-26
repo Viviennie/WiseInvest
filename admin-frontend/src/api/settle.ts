@@ -26,4 +26,8 @@ export function exportDataService() {
 
 export function getSystemService() {
     return request.get('/settle');
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
