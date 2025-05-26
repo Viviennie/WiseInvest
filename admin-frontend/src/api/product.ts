@@ -3,23 +3,23 @@ import request from '@/utils/request';
 import type { Product } from '@/types/product';
 
 export function fetchProducts(page = 1, pageSize = 10) {
-    return request.get('/product/list', { params: { page, pageSize } });
+    return request.get('/product/product/list', { params: { page, pageSize } });
 }
 
 export function searchProducts(keyword:string) {
-    return request.get(`/product/search/${keyword}`);
+    return request.get(`/product/product/search/${keyword}`);
 }
 
 export function fetchNetValue(productId: number, date: string) {
-    return request.get(`/product/netvalue/${productId}/${date}`);
+    return request.get(`/product/product/netvalue/${productId}/${date}`);
 }
 
 export function fetchTransactionDate() {
-    return request.get('/settle/system/transaction-date');
+    return request.get('/product/settle/system/transaction-date');
 }
 
 export function apiAddProduct(product: Product) {
-    return request.post('/product/add', product);
+    return request.post('/product/product/add', product);
 }
 
 export function apiUpdateProduct(product: Product): Promise<Product> {

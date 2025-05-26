@@ -3,15 +3,15 @@ import type { LoginDTO } from '@/types/login.d.ts';
 import { ElMessage } from 'element-plus';
 
 export function loginService(data: LoginDTO) {
-    return request.post('/login', data);
+    return request.post('/account/login', data);
 }
 
 export function resetPwService(data: LoginDTO) {
-    return request.patch('/login/change_password', data);
+    return request.patch('/account/login/change_password', data);
 }
 
 export function verificationService(phoneNumber: string) {
-    return request.get('/login/admin_verification', { params: { phoneNumber } });
+    return request.get('/account/login/admin_verification', { params: { phoneNumber } });
 }
 
 export function sendCodeService(phoneNumber: string) {

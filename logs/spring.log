@@ -505,3 +505,805 @@ Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot c
 2025-05-24 19:45:57.851  INFO 11560 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 2025-05-24 19:45:57.890  INFO 7376 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-05-24 19:45:58.047  INFO 7376 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-26 02:36:58.504  INFO 1756 --- [main] c.s.w.r.RecommendationApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-05-26 02:37:00.446  WARN 1756 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.seme.wiseinvest.recommendation]' package. Please check your configuration.
+2025-05-26 02:37:00.719  INFO 1756 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3886d4ed-5686-32da-a032-779b696e8625
+2025-05-26 02:37:01.803  INFO 1756 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8087 (http)
+2025-05-26 02:37:01.851  INFO 1756 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-26 02:37:01.854  INFO 1756 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2025-05-26 02:37:02.411  INFO 1756 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-26 02:37:02.411  INFO 1756 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3844 ms
+2025-05-26 02:37:02.791  INFO 1756 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'account-service' URL not provided. Will try picking an instance via load-balancing.
+2025-05-26 02:37:03.318  INFO 1756 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'product-service' URL not provided. Will try picking an instance via load-balancing.
+2025-05-26 02:37:03.358  INFO 1756 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'transaction-service' URL not provided. Will try picking an instance via load-balancing.
+2025-05-26 02:37:06.531  INFO 1756 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:37:08.681  INFO 1756 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+2025-05-26 02:37:10.781  INFO 1756 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:37:10.864  WARN 1756 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-05-26 02:37:11.022  INFO 1756 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 94cebf2e-b17e-4054-9de8-9d322ce5702f
+2025-05-26 02:37:11.022  INFO 1756 --- [main] com.alibaba.nacos.common.remote.client   : [94cebf2e-b17e-4054-9de8-9d322ce5702f] RpcClient init label, labels = {module=naming, source=sdk}
+2025-05-26 02:37:11.032  INFO 1756 --- [main] com.alibaba.nacos.common.remote.client   : [94cebf2e-b17e-4054-9de8-9d322ce5702f] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2025-05-26 02:37:11.032  INFO 1756 --- [main] com.alibaba.nacos.common.remote.client   : [94cebf2e-b17e-4054-9de8-9d322ce5702f] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2025-05-26 02:37:11.032  INFO 1756 --- [main] com.alibaba.nacos.common.remote.client   : [94cebf2e-b17e-4054-9de8-9d322ce5702f] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2025-05-26 02:37:11.032  INFO 1756 --- [main] com.alibaba.nacos.common.remote.client   : [94cebf2e-b17e-4054-9de8-9d322ce5702f] Try to connect to server on start up, server: {serverIp = 'localhost', server main port = 8848}
+2025-05-26 02:37:11.203  INFO 1756 --- [main] com.alibaba.nacos.common.remote.client   : [94cebf2e-b17e-4054-9de8-9d322ce5702f] Success to connect to server [localhost:8848] on start up, connectionId = 1748198231051_127.0.0.1_58239
+2025-05-26 02:37:11.203  INFO 1756 --- [main] com.alibaba.nacos.common.remote.client   : [94cebf2e-b17e-4054-9de8-9d322ce5702f] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2025-05-26 02:37:11.203  INFO 1756 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [94cebf2e-b17e-4054-9de8-9d322ce5702f] Notify connected event to listeners.
+2025-05-26 02:37:11.203  INFO 1756 --- [main] com.alibaba.nacos.common.remote.client   : [94cebf2e-b17e-4054-9de8-9d322ce5702f] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$479/0x000001f30b4f08e0
+2025-05-26 02:37:11.344  INFO 1756 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8087 (http) with context path ''
+2025-05-26 02:37:11.398  INFO 1756 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP recommendation-service 192.168.190.1:8087 register finished
+2025-05-26 02:37:12.516  INFO 1756 --- [nacos-grpc-client-executor-5] com.alibaba.nacos.common.remote.client   : [94cebf2e-b17e-4054-9de8-9d322ce5702f] Receive server push request, request = NotifySubscriberRequest, requestId = 1
+2025-05-26 02:37:12.516  INFO 1756 --- [nacos-grpc-client-executor-5] com.alibaba.nacos.common.remote.client   : [94cebf2e-b17e-4054-9de8-9d322ce5702f] Ack server push request, request = NotifySubscriberRequest, requestId = 1
+2025-05-26 02:37:13.081  INFO 1756 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:37:13.082  INFO 1756 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+2025-05-26 02:37:13.090  INFO 1756 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2025-05-26 02:37:13.127  INFO 1756 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2025-05-26 02:37:13.335  INFO 1756 --- [main] c.s.w.r.RecommendationApplication        : Started RecommendationApplication in 25.368 seconds (JVM running for 26.865)
+2025-05-26 02:37:13.344  INFO 1756 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=recommendation-service, group=DEFAULT_GROUP
+2025-05-26 02:37:13.351  INFO 1756 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=recommendation-service.yaml, group=DEFAULT_GROUP
+2025-05-26 02:39:41.782  WARN 1756 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2025-05-26 02:39:41.782  WARN 1756 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2025-05-26 02:39:41.783  WARN 1756 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2025-05-26 02:39:41.784  WARN 1756 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2025-05-26 02:39:41.845  INFO 1756 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2025-05-26 02:39:41.854  INFO 1756 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2025-05-26 02:39:42.188  INFO 1756 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+2025-05-26 02:39:42.188  INFO 1756 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@1db543e5[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2025-05-26 02:39:42.189  INFO 1756 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1748198231051_127.0.0.1_58239
+2025-05-26 02:39:42.191  INFO 1756 --- [nacos-grpc-client-executor-38] c.a.n.c.remote.client.grpc.GrpcClient    : [1748198231051_127.0.0.1_58239]Ignore complete event,isRunning:false,isAbandon=false
+2025-05-26 02:39:42.224  INFO 1756 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@7c189b93[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 39]
+2025-05-26 02:40:06.768  INFO 16892 --- [main] c.s.w.gateway.GatewayApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-05-26 02:40:07.764  INFO 16892 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a8645808-44fa-38c6-b0c6-c90b65dde952
+2025-05-26 02:40:07.865  INFO 16892 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-05-26 02:40:07.867  INFO 16892 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-05-26 02:40:07.868  INFO 16892 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-05-26 02:40:10.134  INFO 16892 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:40:11.827  INFO 16892 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:40:12.236  INFO 16892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2025-05-26 02:40:12.237  INFO 16892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2025-05-26 02:40:12.237  INFO 16892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2025-05-26 02:40:12.237  INFO 16892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2025-05-26 02:40:12.238  INFO 16892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2025-05-26 02:40:12.238  INFO 16892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2025-05-26 02:40:12.238  INFO 16892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2025-05-26 02:40:12.238  INFO 16892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2025-05-26 02:40:12.238  INFO 16892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2025-05-26 02:40:12.239  INFO 16892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2025-05-26 02:40:12.239  INFO 16892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2025-05-26 02:40:12.239  INFO 16892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2025-05-26 02:40:12.239  INFO 16892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2025-05-26 02:40:12.239  INFO 16892 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2025-05-26 02:40:13.978  INFO 16892 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:40:14.112  WARN 16892 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-05-26 02:40:14.240  INFO 16892 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of a2cd6086-b275-43db-8923-4b6990457cb2
+2025-05-26 02:40:14.240  INFO 16892 --- [main] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] RpcClient init label, labels = {module=naming, source=sdk}
+2025-05-26 02:40:14.243  INFO 16892 --- [main] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2025-05-26 02:40:14.243  INFO 16892 --- [main] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2025-05-26 02:40:14.244  INFO 16892 --- [main] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2025-05-26 02:40:14.246  INFO 16892 --- [main] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Try to connect to server on start up, server: {serverIp = 'localhost', server main port = 8848}
+2025-05-26 02:40:14.385  INFO 16892 --- [main] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Success to connect to server [localhost:8848] on start up, connectionId = 1748198414260_127.0.0.1_58591
+2025-05-26 02:40:14.385  INFO 16892 --- [main] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2025-05-26 02:40:14.385  INFO 16892 --- [main] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$473/0x000001be3a4ea4d8
+2025-05-26 02:40:14.385  INFO 16892 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Notify connected event to listeners.
+2025-05-26 02:40:14.920  INFO 16892 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8082
+2025-05-26 02:40:14.985  INFO 16892 --- [nacos-grpc-client-executor-4] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Receive server push request, request = NotifySubscriberRequest, requestId = 2
+2025-05-26 02:40:14.986  INFO 16892 --- [nacos-grpc-client-executor-4] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Ack server push request, request = NotifySubscriberRequest, requestId = 2
+2025-05-26 02:40:16.487  INFO 16892 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:40:17.996  INFO 16892 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:40:18.011  INFO 16892 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP gateway 192.168.190.1:8082 register finished
+2025-05-26 02:40:18.046  INFO 16892 --- [main] c.s.w.gateway.GatewayApplication         : Started GatewayApplication in 18.72 seconds (JVM running for 20.15)
+2025-05-26 02:40:18.052  INFO 16892 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=gateway.yaml, group=DEFAULT_GROUP
+2025-05-26 02:40:18.053  INFO 16892 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=gateway, group=DEFAULT_GROUP
+2025-05-26 02:40:18.578  INFO 16892 --- [nacos-grpc-client-executor-8] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Receive server push request, request = NotifySubscriberRequest, requestId = 3
+2025-05-26 02:40:18.592  INFO 16892 --- [nacos-grpc-client-executor-8] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Ack server push request, request = NotifySubscriberRequest, requestId = 3
+2025-05-26 02:40:29.614  INFO 31492 --- [main] c.s.wiseinvest.settle.SettleApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-05-26 02:40:30.987  INFO 31492 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=78502ef6-3144-303d-80df-6870c011b0b8
+2025-05-26 02:40:31.612  INFO 31492 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2025-05-26 02:40:31.626  INFO 31492 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-26 02:40:31.626  INFO 31492 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2025-05-26 02:40:31.876  INFO 31492 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-26 02:40:31.876  INFO 31492 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2233 ms
+2025-05-26 02:40:33.251  INFO 31492 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'product-service' URL not provided. Will try picking an instance via load-balancing.
+2025-05-26 02:40:33.618  INFO 31492 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'transaction-service' URL not provided. Will try picking an instance via load-balancing.
+2025-05-26 02:40:33.649  INFO 31492 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'settle-service' URL not provided. Will try picking an instance via load-balancing.
+2025-05-26 02:40:35.260  INFO 25860 --- [main] c.s.w.account.AccountApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-05-26 02:40:35.880  INFO 31492 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:40:35.932  INFO 31492 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+2025-05-26 02:40:36.866  INFO 25860 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=4acfd277-f3e6-36f6-bdcd-7a6f35df7f2b
+2025-05-26 02:40:37.494  INFO 25860 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2025-05-26 02:40:37.508  INFO 25860 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-26 02:40:37.509  INFO 25860 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2025-05-26 02:40:37.663  INFO 31492 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:40:37.707  WARN 31492 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-05-26 02:40:37.785  INFO 25860 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-26 02:40:37.785  INFO 25860 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2486 ms
+2025-05-26 02:40:37.832  INFO 31492 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of cf00986a-9bd6-4f32-a54d-33a3091f3f30
+2025-05-26 02:40:37.832  INFO 31492 --- [main] com.alibaba.nacos.common.remote.client   : [cf00986a-9bd6-4f32-a54d-33a3091f3f30] RpcClient init label, labels = {module=naming, source=sdk}
+2025-05-26 02:40:37.835  INFO 31492 --- [main] com.alibaba.nacos.common.remote.client   : [cf00986a-9bd6-4f32-a54d-33a3091f3f30] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2025-05-26 02:40:37.835  INFO 31492 --- [main] com.alibaba.nacos.common.remote.client   : [cf00986a-9bd6-4f32-a54d-33a3091f3f30] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2025-05-26 02:40:37.836  INFO 31492 --- [main] com.alibaba.nacos.common.remote.client   : [cf00986a-9bd6-4f32-a54d-33a3091f3f30] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2025-05-26 02:40:37.836  INFO 31492 --- [main] com.alibaba.nacos.common.remote.client   : [cf00986a-9bd6-4f32-a54d-33a3091f3f30] Try to connect to server on start up, server: {serverIp = 'localhost', server main port = 8848}
+2025-05-26 02:40:37.963  INFO 31492 --- [main] com.alibaba.nacos.common.remote.client   : [cf00986a-9bd6-4f32-a54d-33a3091f3f30] Success to connect to server [localhost:8848] on start up, connectionId = 1748198437847_127.0.0.1_58655
+2025-05-26 02:40:37.963  INFO 31492 --- [main] com.alibaba.nacos.common.remote.client   : [cf00986a-9bd6-4f32-a54d-33a3091f3f30] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2025-05-26 02:40:37.963  INFO 31492 --- [main] com.alibaba.nacos.common.remote.client   : [cf00986a-9bd6-4f32-a54d-33a3091f3f30] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$478/0x00000129304f5d18
+2025-05-26 02:40:37.963  INFO 31492 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [cf00986a-9bd6-4f32-a54d-33a3091f3f30] Notify connected event to listeners.
+2025-05-26 02:40:38.045  INFO 31492 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2025-05-26 02:40:38.059  INFO 31492 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP settle-service 192.168.190.1:8085 register finished
+2025-05-26 02:40:38.587  INFO 31492 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [cf00986a-9bd6-4f32-a54d-33a3091f3f30] Receive server push request, request = NotifySubscriberRequest, requestId = 4
+2025-05-26 02:40:38.601  INFO 31492 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [cf00986a-9bd6-4f32-a54d-33a3091f3f30] Ack server push request, request = NotifySubscriberRequest, requestId = 4
+2025-05-26 02:40:39.763  INFO 31492 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:40:39.764  INFO 31492 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+2025-05-26 02:40:39.770  INFO 31492 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2025-05-26 02:40:39.810  INFO 31492 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2025-05-26 02:40:39.972  INFO 31492 --- [main] c.s.wiseinvest.settle.SettleApplication  : Started SettleApplication in 17.407 seconds (JVM running for 18.763)
+2025-05-26 02:40:39.984  INFO 31492 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=settle-service.yaml, group=DEFAULT_GROUP
+2025-05-26 02:40:39.986  INFO 31492 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=settle-service, group=DEFAULT_GROUP
+2025-05-26 02:40:41.562  INFO 25860 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:40:41.610  INFO 25860 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+2025-05-26 02:40:43.169  INFO 25860 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:40:43.344  WARN 25860 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-05-26 02:40:43.618  INFO 25860 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 2f70768d-4f99-4afb-8fff-d67755435544
+2025-05-26 02:40:43.618  INFO 25860 --- [main] com.alibaba.nacos.common.remote.client   : [2f70768d-4f99-4afb-8fff-d67755435544] RpcClient init label, labels = {module=naming, source=sdk}
+2025-05-26 02:40:43.622  INFO 25860 --- [main] com.alibaba.nacos.common.remote.client   : [2f70768d-4f99-4afb-8fff-d67755435544] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2025-05-26 02:40:43.622  INFO 25860 --- [main] com.alibaba.nacos.common.remote.client   : [2f70768d-4f99-4afb-8fff-d67755435544] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2025-05-26 02:40:43.622  INFO 25860 --- [main] com.alibaba.nacos.common.remote.client   : [2f70768d-4f99-4afb-8fff-d67755435544] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2025-05-26 02:40:43.623  INFO 25860 --- [main] com.alibaba.nacos.common.remote.client   : [2f70768d-4f99-4afb-8fff-d67755435544] Try to connect to server on start up, server: {serverIp = 'localhost', server main port = 8848}
+2025-05-26 02:40:43.765  INFO 25860 --- [main] com.alibaba.nacos.common.remote.client   : [2f70768d-4f99-4afb-8fff-d67755435544] Success to connect to server [localhost:8848] on start up, connectionId = 1748198443642_127.0.0.1_58674
+2025-05-26 02:40:43.765  INFO 25860 --- [main] com.alibaba.nacos.common.remote.client   : [2f70768d-4f99-4afb-8fff-d67755435544] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2025-05-26 02:40:43.765  INFO 25860 --- [main] com.alibaba.nacos.common.remote.client   : [2f70768d-4f99-4afb-8fff-d67755435544] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$478/0x00000159014f5f18
+2025-05-26 02:40:43.765  INFO 25860 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [2f70768d-4f99-4afb-8fff-d67755435544] Notify connected event to listeners.
+2025-05-26 02:40:43.843  INFO 25860 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-26 02:40:43.857  INFO 25860 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP account-service 192.168.190.1:8081 register finished
+2025-05-26 02:40:44.397  INFO 25860 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [2f70768d-4f99-4afb-8fff-d67755435544] Receive server push request, request = NotifySubscriberRequest, requestId = 5
+2025-05-26 02:40:44.411  INFO 25860 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [2f70768d-4f99-4afb-8fff-d67755435544] Ack server push request, request = NotifySubscriberRequest, requestId = 5
+2025-05-26 02:40:45.462  INFO 25860 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:40:45.463  INFO 25860 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+2025-05-26 02:40:45.469  INFO 25860 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2025-05-26 02:40:45.512  INFO 25860 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2025-05-26 02:40:45.719  INFO 25860 --- [main] c.s.w.account.AccountApplication         : Started AccountApplication in 17.545 seconds (JVM running for 18.712)
+2025-05-26 02:40:45.727  INFO 25860 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=account-service, group=DEFAULT_GROUP
+2025-05-26 02:40:45.731  INFO 25860 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=account-service.yaml, group=DEFAULT_GROUP
+2025-05-26 02:40:46.899  INFO 31708 --- [main] c.s.w.product.ProductApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-05-26 02:40:48.228  INFO 31708 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8626493e-7e82-3573-ad05-8d7c44fc453a
+2025-05-26 02:40:48.852  INFO 31708 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2025-05-26 02:40:48.866  INFO 31708 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-26 02:40:48.867  INFO 31708 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2025-05-26 02:40:49.175  INFO 31708 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-26 02:40:49.176  INFO 31708 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2250 ms
+2025-05-26 02:40:50.471  INFO 31708 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'settle-service' URL not provided. Will try picking an instance via load-balancing.
+2025-05-26 02:40:53.011  INFO 31708 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:40:53.054  INFO 31708 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+2025-05-26 02:40:54.773  INFO 31708 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:40:54.815  WARN 31708 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-05-26 02:40:54.925  INFO 31708 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 826f81ec-532a-47c0-8c7b-a238087a8a18
+2025-05-26 02:40:54.925  INFO 31708 --- [main] com.alibaba.nacos.common.remote.client   : [826f81ec-532a-47c0-8c7b-a238087a8a18] RpcClient init label, labels = {module=naming, source=sdk}
+2025-05-26 02:40:54.928  INFO 31708 --- [main] com.alibaba.nacos.common.remote.client   : [826f81ec-532a-47c0-8c7b-a238087a8a18] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2025-05-26 02:40:54.928  INFO 31708 --- [main] com.alibaba.nacos.common.remote.client   : [826f81ec-532a-47c0-8c7b-a238087a8a18] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2025-05-26 02:40:54.929  INFO 31708 --- [main] com.alibaba.nacos.common.remote.client   : [826f81ec-532a-47c0-8c7b-a238087a8a18] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2025-05-26 02:40:54.930  INFO 31708 --- [main] com.alibaba.nacos.common.remote.client   : [826f81ec-532a-47c0-8c7b-a238087a8a18] Try to connect to server on start up, server: {serverIp = 'localhost', server main port = 8848}
+2025-05-26 02:40:55.072  INFO 31708 --- [main] com.alibaba.nacos.common.remote.client   : [826f81ec-532a-47c0-8c7b-a238087a8a18] Success to connect to server [localhost:8848] on start up, connectionId = 1748198454944_127.0.0.1_58705
+2025-05-26 02:40:55.072  INFO 31708 --- [main] com.alibaba.nacos.common.remote.client   : [826f81ec-532a-47c0-8c7b-a238087a8a18] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2025-05-26 02:40:55.072  INFO 31708 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [826f81ec-532a-47c0-8c7b-a238087a8a18] Notify connected event to listeners.
+2025-05-26 02:40:55.072  INFO 31708 --- [main] com.alibaba.nacos.common.remote.client   : [826f81ec-532a-47c0-8c7b-a238087a8a18] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$478/0x0000018ec54f6210
+2025-05-26 02:40:55.184  INFO 31708 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2025-05-26 02:40:55.201  INFO 31708 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP product-service 192.168.190.1:8083 register finished
+2025-05-26 02:40:55.703  INFO 31708 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [826f81ec-532a-47c0-8c7b-a238087a8a18] Receive server push request, request = NotifySubscriberRequest, requestId = 6
+2025-05-26 02:40:55.744  INFO 31708 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [826f81ec-532a-47c0-8c7b-a238087a8a18] Ack server push request, request = NotifySubscriberRequest, requestId = 6
+2025-05-26 02:40:56.794  INFO 31708 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:40:56.795  INFO 31708 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+2025-05-26 02:40:56.802  INFO 31708 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2025-05-26 02:40:56.840  INFO 31708 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2025-05-26 02:40:57.034  INFO 31708 --- [main] c.s.w.product.ProductApplication         : Started ProductApplication in 17.304 seconds (JVM running for 18.487)
+2025-05-26 02:40:57.041  INFO 31708 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=product-service, group=DEFAULT_GROUP
+2025-05-26 02:40:57.045  INFO 31708 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=product-service.yaml, group=DEFAULT_GROUP
+2025-05-26 02:40:59.192  INFO 26768 --- [main] c.s.w.r.RecommendationApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-05-26 02:41:00.352  WARN 26768 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.seme.wiseinvest.recommendation]' package. Please check your configuration.
+2025-05-26 02:41:00.497  INFO 26768 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3886d4ed-5686-32da-a032-779b696e8625
+2025-05-26 02:41:01.248  INFO 26768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8087 (http)
+2025-05-26 02:41:01.265  INFO 26768 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-26 02:41:01.266  INFO 26768 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2025-05-26 02:41:01.603  INFO 26768 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-26 02:41:01.603  INFO 26768 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2390 ms
+2025-05-26 02:41:01.893  INFO 26768 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'account-service' URL not provided. Will try picking an instance via load-balancing.
+2025-05-26 02:41:02.245  INFO 26768 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'product-service' URL not provided. Will try picking an instance via load-balancing.
+2025-05-26 02:41:02.271  INFO 26768 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'transaction-service' URL not provided. Will try picking an instance via load-balancing.
+2025-05-26 02:41:04.483  INFO 26768 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:41:05.419  INFO 26768 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+2025-05-26 02:41:07.057  INFO 26768 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:41:07.098  WARN 26768 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-05-26 02:41:07.213  INFO 26768 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of b0d8dfbb-79fc-4123-b334-45bf18a5af12
+2025-05-26 02:41:07.213  INFO 26768 --- [main] com.alibaba.nacos.common.remote.client   : [b0d8dfbb-79fc-4123-b334-45bf18a5af12] RpcClient init label, labels = {module=naming, source=sdk}
+2025-05-26 02:41:07.216  INFO 26768 --- [main] com.alibaba.nacos.common.remote.client   : [b0d8dfbb-79fc-4123-b334-45bf18a5af12] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2025-05-26 02:41:07.216  INFO 26768 --- [main] com.alibaba.nacos.common.remote.client   : [b0d8dfbb-79fc-4123-b334-45bf18a5af12] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2025-05-26 02:41:07.216  INFO 26768 --- [main] com.alibaba.nacos.common.remote.client   : [b0d8dfbb-79fc-4123-b334-45bf18a5af12] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2025-05-26 02:41:07.217  INFO 26768 --- [main] com.alibaba.nacos.common.remote.client   : [b0d8dfbb-79fc-4123-b334-45bf18a5af12] Try to connect to server on start up, server: {serverIp = 'localhost', server main port = 8848}
+2025-05-26 02:41:07.356  INFO 26768 --- [main] com.alibaba.nacos.common.remote.client   : [b0d8dfbb-79fc-4123-b334-45bf18a5af12] Success to connect to server [localhost:8848] on start up, connectionId = 1748198467229_127.0.0.1_58745
+2025-05-26 02:41:07.356  INFO 26768 --- [main] com.alibaba.nacos.common.remote.client   : [b0d8dfbb-79fc-4123-b334-45bf18a5af12] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2025-05-26 02:41:07.356  INFO 26768 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [b0d8dfbb-79fc-4123-b334-45bf18a5af12] Notify connected event to listeners.
+2025-05-26 02:41:07.356  INFO 26768 --- [main] com.alibaba.nacos.common.remote.client   : [b0d8dfbb-79fc-4123-b334-45bf18a5af12] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$478/0x00000269cf4ce780
+2025-05-26 02:41:07.478  INFO 26768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8087 (http) with context path ''
+2025-05-26 02:41:07.493  INFO 26768 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP recommendation-service 192.168.190.1:8087 register finished
+2025-05-26 02:41:07.971  INFO 26768 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [b0d8dfbb-79fc-4123-b334-45bf18a5af12] Receive server push request, request = NotifySubscriberRequest, requestId = 7
+2025-05-26 02:41:07.985  INFO 26768 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [b0d8dfbb-79fc-4123-b334-45bf18a5af12] Ack server push request, request = NotifySubscriberRequest, requestId = 7
+2025-05-26 02:41:09.023  INFO 26768 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:41:09.024  INFO 26768 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+2025-05-26 02:41:09.031  INFO 26768 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2025-05-26 02:41:09.063  INFO 26768 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2025-05-26 02:41:09.234  INFO 26768 --- [main] c.s.w.r.RecommendationApplication        : Started RecommendationApplication in 16.941 seconds (JVM running for 18.153)
+2025-05-26 02:41:09.242  INFO 26768 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=recommendation-service, group=DEFAULT_GROUP
+2025-05-26 02:41:09.242  INFO 26768 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=recommendation-service.yaml, group=DEFAULT_GROUP
+2025-05-26 02:41:11.739  INFO 25656 --- [main] c.s.w.t.TransactionApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-05-26 02:41:13.227  INFO 25656 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=7aa96f6c-e886-30ce-b918-bed1ee23465d
+2025-05-26 02:41:13.835  INFO 25656 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8086 (http)
+2025-05-26 02:41:13.848  INFO 25656 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-26 02:41:13.848  INFO 25656 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2025-05-26 02:41:14.124  INFO 25656 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-26 02:41:14.124  INFO 25656 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2351 ms
+2025-05-26 02:41:15.507  INFO 25656 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'settle-service' URL not provided. Will try picking an instance via load-balancing.
+2025-05-26 02:41:15.900  INFO 25656 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'account-service' URL not provided. Will try picking an instance via load-balancing.
+2025-05-26 02:41:15.952  INFO 25656 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'product-service' URL not provided. Will try picking an instance via load-balancing.
+2025-05-26 02:41:18.076  INFO 25656 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:41:18.114  INFO 25656 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+2025-05-26 02:41:19.691  INFO 25656 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:41:19.733  WARN 25656 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-05-26 02:41:19.863  INFO 25656 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of d6d86bf6-922f-47c4-890a-0f55313ae426
+2025-05-26 02:41:19.864  INFO 25656 --- [main] com.alibaba.nacos.common.remote.client   : [d6d86bf6-922f-47c4-890a-0f55313ae426] RpcClient init label, labels = {module=naming, source=sdk}
+2025-05-26 02:41:19.876  INFO 25656 --- [main] com.alibaba.nacos.common.remote.client   : [d6d86bf6-922f-47c4-890a-0f55313ae426] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2025-05-26 02:41:19.876  INFO 25656 --- [main] com.alibaba.nacos.common.remote.client   : [d6d86bf6-922f-47c4-890a-0f55313ae426] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2025-05-26 02:41:19.877  INFO 25656 --- [main] com.alibaba.nacos.common.remote.client   : [d6d86bf6-922f-47c4-890a-0f55313ae426] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2025-05-26 02:41:19.878  INFO 25656 --- [main] com.alibaba.nacos.common.remote.client   : [d6d86bf6-922f-47c4-890a-0f55313ae426] Try to connect to server on start up, server: {serverIp = 'localhost', server main port = 8848}
+2025-05-26 02:41:20.021  INFO 25656 --- [main] com.alibaba.nacos.common.remote.client   : [d6d86bf6-922f-47c4-890a-0f55313ae426] Success to connect to server [localhost:8848] on start up, connectionId = 1748198479893_127.0.0.1_58765
+2025-05-26 02:41:20.021  INFO 25656 --- [main] com.alibaba.nacos.common.remote.client   : [d6d86bf6-922f-47c4-890a-0f55313ae426] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2025-05-26 02:41:20.021  INFO 25656 --- [main] com.alibaba.nacos.common.remote.client   : [d6d86bf6-922f-47c4-890a-0f55313ae426] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$478/0x0000015e814f5d18
+2025-05-26 02:41:20.021  INFO 25656 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [d6d86bf6-922f-47c4-890a-0f55313ae426] Notify connected event to listeners.
+2025-05-26 02:41:20.102  INFO 25656 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8086 (http) with context path ''
+2025-05-26 02:41:20.115  INFO 25656 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP transaction-service 192.168.190.1:8086 register finished
+2025-05-26 02:41:20.608  INFO 25656 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [d6d86bf6-922f-47c4-890a-0f55313ae426] Receive server push request, request = NotifySubscriberRequest, requestId = 8
+2025-05-26 02:41:20.645  INFO 25656 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [d6d86bf6-922f-47c4-890a-0f55313ae426] Ack server push request, request = NotifySubscriberRequest, requestId = 8
+2025-05-26 02:41:21.606  INFO 25656 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:41:21.607  INFO 25656 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+2025-05-26 02:41:21.616  INFO 25656 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2025-05-26 02:41:21.653  INFO 25656 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2025-05-26 02:41:21.882  INFO 25656 --- [main] c.s.w.t.TransactionApplication           : Started TransactionApplication in 17.094 seconds (JVM running for 18.362)
+2025-05-26 02:41:21.907  INFO 25656 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=transaction-service.yaml, group=DEFAULT_GROUP
+2025-05-26 02:41:21.908  INFO 25656 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=transaction-service, group=DEFAULT_GROUP
+2025-05-26 02:41:48.388  INFO 31312 --- [main] c.s.w.chatbot.ChatbotApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-05-26 02:41:49.602  WARN 31312 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.seme.wiseinvest.chatbot]' package. Please check your configuration.
+2025-05-26 02:41:49.755  INFO 31312 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6dab752d-72e9-3aaa-9441-54eecb3e5245
+2025-05-26 02:41:50.428  INFO 31312 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2025-05-26 02:41:50.443  INFO 31312 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-26 02:41:50.444  INFO 31312 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2025-05-26 02:41:50.750  INFO 31312 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-26 02:41:50.751  INFO 31312 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2344 ms
+2025-05-26 02:41:53.134  INFO 31312 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-05-26 02:41:53.757  WARN 31312 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2025-05-26 02:41:53.762  INFO 31312 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-05-26 02:41:53.815  INFO 31312 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2025-05-26 02:41:53.854 ERROR 31312 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2025-05-26 02:41:53.856  WARN 31312 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2025-05-26 02:41:53.856  WARN 31312 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2025-05-26 02:41:53.856  WARN 31312 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2025-05-26 02:41:53.862  WARN 31312 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2025-05-26 02:48:10.159  INFO 25860 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-26 02:48:10.160  INFO 25860 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-26 02:48:10.162  INFO 25860 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-26 02:48:28.663  INFO 25860 --- [http-nio-8081-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-26 02:48:29.327  INFO 25860 --- [http-nio-8081-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-26 02:49:12.579  WARN 25860 --- [http-nio-8081-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `int` from String "Admin": not a valid `int` value; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `int` from String "Admin": not a valid `int` value<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 4, column: 15] (through reference chain: com.seme.wiseinvest.account.domain.dto.LoginDTO["userType"])]
+2025-05-26 02:54:06.811  INFO 16892 --- [nacos-grpc-client-executor-175] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Receive server push request, request = NotifySubscriberRequest, requestId = 9
+2025-05-26 02:54:06.813  INFO 16892 --- [nacos-grpc-client-executor-175] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Ack server push request, request = NotifySubscriberRequest, requestId = 9
+2025-05-26 02:54:12.022  INFO 31708 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-26 02:54:12.025  INFO 31708 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-26 02:54:12.054  INFO 31708 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 29 ms
+2025-05-26 02:54:12.245  INFO 31708 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-26 02:54:12.262  INFO 16892 --- [nacos-grpc-client-executor-178] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Receive server push request, request = NotifySubscriberRequest, requestId = 10
+2025-05-26 02:54:12.263  INFO 16892 --- [nacos-grpc-client-executor-178] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Ack server push request, request = NotifySubscriberRequest, requestId = 10
+2025-05-26 02:54:12.860  INFO 31708 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-26 03:01:55.300  INFO 25656 --- [http-nio-8086-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-26 03:01:55.302  INFO 25656 --- [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-26 03:01:55.302  INFO 25656 --- [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-05-26 03:01:55.507  INFO 25656 --- [http-nio-8086-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-26 03:01:55.716  INFO 16892 --- [nacos-grpc-client-executor-272] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Receive server push request, request = NotifySubscriberRequest, requestId = 11
+2025-05-26 03:01:55.716  INFO 16892 --- [nacos-grpc-client-executor-272] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Ack server push request, request = NotifySubscriberRequest, requestId = 11
+2025-05-26 03:01:56.307  INFO 25656 --- [http-nio-8086-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-26 03:01:57.431  INFO 25656 --- [nacos-grpc-client-executor-255] com.alibaba.nacos.common.remote.client   : [d6d86bf6-922f-47c4-890a-0f55313ae426] Receive server push request, request = NotifySubscriberRequest, requestId = 12
+2025-05-26 03:01:57.431  INFO 25656 --- [nacos-grpc-client-executor-255] com.alibaba.nacos.common.remote.client   : [d6d86bf6-922f-47c4-890a-0f55313ae426] Ack server push request, request = NotifySubscriberRequest, requestId = 12
+2025-05-26 03:01:57.746  INFO 31492 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-26 03:01:57.747  INFO 31492 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-26 03:01:57.749  INFO 31492 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-26 03:01:57.914  INFO 31492 --- [http-nio-8085-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-26 03:01:58.555  INFO 31492 --- [http-nio-8085-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-26 03:02:04.938  INFO 26768 --- [http-nio-8087-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-26 03:02:04.944  INFO 26768 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-26 03:02:04.975  INFO 26768 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 31 ms
+2025-05-26 03:02:05.054  INFO 26768 --- [http-nio-8087-exec-1] c.s.w.r.s.i.RecommendationServiceImpl    : Starting personalized recommendations for fundAccount: 1923377329766207490
+2025-05-26 03:02:05.251  INFO 16892 --- [nacos-grpc-client-executor-277] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Receive server push request, request = NotifySubscriberRequest, requestId = 13
+2025-05-26 03:02:05.251  INFO 16892 --- [nacos-grpc-client-executor-277] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Ack server push request, request = NotifySubscriberRequest, requestId = 13
+2025-05-26 03:02:05.251  INFO 16892 --- [nacos-grpc-client-executor-278] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Receive server push request, request = NotifySubscriberRequest, requestId = 14
+2025-05-26 03:02:05.251  INFO 16892 --- [nacos-grpc-client-executor-278] com.alibaba.nacos.common.remote.client   : [a2cd6086-b275-43db-8923-4b6990457cb2] Ack server push request, request = NotifySubscriberRequest, requestId = 14
+2025-05-26 03:02:05.654  INFO 25656 --- [http-nio-8086-exec-2] c.s.w.t.service.impl.QueryServiceImpl    : Fetching holdings for fundAccount: 1923377329766207490
+2025-05-26 03:02:05.795  INFO 26768 --- [nacos-grpc-client-executor-260] com.alibaba.nacos.common.remote.client   : [b0d8dfbb-79fc-4123-b334-45bf18a5af12] Receive server push request, request = NotifySubscriberRequest, requestId = 15
+2025-05-26 03:02:05.795  INFO 26768 --- [nacos-grpc-client-executor-260] com.alibaba.nacos.common.remote.client   : [b0d8dfbb-79fc-4123-b334-45bf18a5af12] Ack server push request, request = NotifySubscriberRequest, requestId = 15
+2025-05-26 03:02:05.802 ERROR 25656 --- [http-nio-8086-exec-2] c.s.w.t.service.impl.QueryServiceImpl    : Error processing trading accounts data for fundAccount 1923377329766207490: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1923385219038121986')
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: java.util.ArrayList[0]). Data: [1923385219038121986, 1926366569253429250, 1926368090665902082, 1926372011169890305, 1926376591983198209]
+
+java.lang.IllegalArgumentException: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1923385219038121986')
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: java.util.ArrayList[0])
+	at com.fasterxml.jackson.databind.ObjectMapper._convert(ObjectMapper.java:4393) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper.convertValue(ObjectMapper.java:4334) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.seme.wiseinvest.transaction.service.impl.QueryServiceImpl.getHoldingsByFundAccount(QueryServiceImpl.java:89) ~[classes/:na]
+	at com.seme.wiseinvest.transaction.controller.QueryController.getHoldingsByFundAccount(QueryController.java:35) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1923385219038121986')
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: java.util.ArrayList[0])
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1728) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1353) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer._deserializeFromString(StdDeserializer.java:311) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.deserialize(MapDeserializer.java:444) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.deserialize(MapDeserializer.java:32) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer._deserializeFromArray(CollectionDeserializer.java:355) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:244) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:28) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper._convert(ObjectMapper.java:4388) ~[jackson-databind-2.13.5.jar:2.13.5]
+	... 53 common frames omitted
+
+2025-05-26 03:02:05.814  INFO 25656 --- [nacos-grpc-client-executor-258] com.alibaba.nacos.common.remote.client   : [d6d86bf6-922f-47c4-890a-0f55313ae426] Receive server push request, request = NotifySubscriberRequest, requestId = 16
+2025-05-26 03:02:05.816  INFO 25656 --- [nacos-grpc-client-executor-258] com.alibaba.nacos.common.remote.client   : [d6d86bf6-922f-47c4-890a-0f55313ae426] Ack server push request, request = NotifySubscriberRequest, requestId = 16
+2025-05-26 03:02:05.979  INFO 26768 --- [http-nio-8087-exec-1] c.s.w.r.s.i.RecommendationServiceImpl    : Personalized recommendation for fundAccount: 1923377329766207490, userRiskLevel: 1
+2025-05-26 03:02:05.985  INFO 26768 --- [http-nio-8087-exec-1] c.s.w.r.s.i.RecommendationServiceImpl    : Returning 6 recommendations for fundAccount: 1923377329766207490
+2025-05-26 03:02:06.221  INFO 26768 --- [nacos-grpc-client-executor-262] com.alibaba.nacos.common.remote.client   : [b0d8dfbb-79fc-4123-b334-45bf18a5af12] Receive server push request, request = NotifySubscriberRequest, requestId = 17
+2025-05-26 03:02:06.222  INFO 26768 --- [nacos-grpc-client-executor-262] com.alibaba.nacos.common.remote.client   : [b0d8dfbb-79fc-4123-b334-45bf18a5af12] Ack server push request, request = NotifySubscriberRequest, requestId = 17
+2025-05-26 03:02:06.435  INFO 26768 --- [nacos-grpc-client-executor-264] com.alibaba.nacos.common.remote.client   : [b0d8dfbb-79fc-4123-b334-45bf18a5af12] Receive server push request, request = NotifySubscriberRequest, requestId = 18
+2025-05-26 03:02:06.435  INFO 26768 --- [nacos-grpc-client-executor-264] com.alibaba.nacos.common.remote.client   : [b0d8dfbb-79fc-4123-b334-45bf18a5af12] Ack server push request, request = NotifySubscriberRequest, requestId = 18
+2025-05-26 03:02:23.986  INFO 26768 --- [http-nio-8087-exec-2] c.s.w.r.s.i.RecommendationServiceImpl    : Starting personalized recommendations for fundAccount: 1923377329766207490
+2025-05-26 03:02:24.035  INFO 25656 --- [http-nio-8086-exec-4] c.s.w.t.service.impl.QueryServiceImpl    : Fetching holdings for fundAccount: 1923377329766207490
+2025-05-26 03:02:24.061 ERROR 25656 --- [http-nio-8086-exec-4] c.s.w.t.service.impl.QueryServiceImpl    : Error processing trading accounts data for fundAccount 1923377329766207490: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1923385219038121986')
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: java.util.ArrayList[0]). Data: [1923385219038121986, 1926366569253429250, 1926368090665902082, 1926372011169890305, 1926376591983198209]
+
+java.lang.IllegalArgumentException: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1923385219038121986')
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: java.util.ArrayList[0])
+	at com.fasterxml.jackson.databind.ObjectMapper._convert(ObjectMapper.java:4393) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper.convertValue(ObjectMapper.java:4334) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.seme.wiseinvest.transaction.service.impl.QueryServiceImpl.getHoldingsByFundAccount(QueryServiceImpl.java:89) ~[classes/:na]
+	at com.seme.wiseinvest.transaction.controller.QueryController.getHoldingsByFundAccount(QueryController.java:35) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1923385219038121986')
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: java.util.ArrayList[0])
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1728) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1353) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer._deserializeFromString(StdDeserializer.java:311) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.deserialize(MapDeserializer.java:444) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.deserialize(MapDeserializer.java:32) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer._deserializeFromArray(CollectionDeserializer.java:355) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:244) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:28) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper._convert(ObjectMapper.java:4388) ~[jackson-databind-2.13.5.jar:2.13.5]
+	... 53 common frames omitted
+
+2025-05-26 03:02:24.093  INFO 26768 --- [http-nio-8087-exec-2] c.s.w.r.s.i.RecommendationServiceImpl    : Personalized recommendation for fundAccount: 1923377329766207490, userRiskLevel: 1
+2025-05-26 03:02:24.093  INFO 26768 --- [http-nio-8087-exec-2] c.s.w.r.s.i.RecommendationServiceImpl    : Returning 6 recommendations for fundAccount: 1923377329766207490
+2025-05-26 03:02:58.501  INFO 26768 --- [http-nio-8087-exec-3] c.s.w.r.s.i.RecommendationServiceImpl    : Starting personalized recommendations for fundAccount: 1923377329766207490
+2025-05-26 03:02:58.547  INFO 25656 --- [http-nio-8086-exec-9] c.s.w.t.service.impl.QueryServiceImpl    : Fetching holdings for fundAccount: 1923377329766207490
+2025-05-26 03:02:58.576 ERROR 25656 --- [http-nio-8086-exec-9] c.s.w.t.service.impl.QueryServiceImpl    : Error processing trading accounts data for fundAccount 1923377329766207490: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1923385219038121986')
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: java.util.ArrayList[0]). Data: [1923385219038121986, 1926366569253429250, 1926368090665902082, 1926372011169890305, 1926376591983198209]
+
+java.lang.IllegalArgumentException: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1923385219038121986')
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: java.util.ArrayList[0])
+	at com.fasterxml.jackson.databind.ObjectMapper._convert(ObjectMapper.java:4393) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper.convertValue(ObjectMapper.java:4334) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.seme.wiseinvest.transaction.service.impl.QueryServiceImpl.getHoldingsByFundAccount(QueryServiceImpl.java:89) ~[classes/:na]
+	at com.seme.wiseinvest.transaction.controller.QueryController.getHoldingsByFundAccount(QueryController.java:35) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1923385219038121986')
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: java.util.ArrayList[0])
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1728) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1353) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer._deserializeFromString(StdDeserializer.java:311) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.deserialize(MapDeserializer.java:444) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.deserialize(MapDeserializer.java:32) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer._deserializeFromArray(CollectionDeserializer.java:355) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:244) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:28) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper._convert(ObjectMapper.java:4388) ~[jackson-databind-2.13.5.jar:2.13.5]
+	... 53 common frames omitted
+
+2025-05-26 03:02:58.639  INFO 26768 --- [http-nio-8087-exec-3] c.s.w.r.s.i.RecommendationServiceImpl    : Personalized recommendation for fundAccount: 1923377329766207490, userRiskLevel: 1
+2025-05-26 03:02:58.639  INFO 26768 --- [http-nio-8087-exec-3] c.s.w.r.s.i.RecommendationServiceImpl    : Returning 6 recommendations for fundAccount: 1923377329766207490
+2025-05-26 03:03:41.093  INFO 26768 --- [http-nio-8087-exec-4] c.s.w.r.s.i.RecommendationServiceImpl    : Starting personalized recommendations for fundAccount: 1923377329766207490
+2025-05-26 03:03:41.139  INFO 25656 --- [http-nio-8086-exec-1] c.s.w.t.service.impl.QueryServiceImpl    : Fetching holdings for fundAccount: 1923377329766207490
+2025-05-26 03:03:41.205 ERROR 25656 --- [http-nio-8086-exec-1] c.s.w.t.service.impl.QueryServiceImpl    : Error processing trading accounts data for fundAccount 1923377329766207490: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1923385219038121986')
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: java.util.ArrayList[0]). Data: [1923385219038121986, 1926366569253429250, 1926368090665902082, 1926372011169890305, 1926376591983198209]
+
+java.lang.IllegalArgumentException: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1923385219038121986')
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: java.util.ArrayList[0])
+	at com.fasterxml.jackson.databind.ObjectMapper._convert(ObjectMapper.java:4393) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper.convertValue(ObjectMapper.java:4334) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.seme.wiseinvest.transaction.service.impl.QueryServiceImpl.getHoldingsByFundAccount(QueryServiceImpl.java:89) ~[classes/:na]
+	at com.seme.wiseinvest.transaction.controller.QueryController.getHoldingsByFundAccount(QueryController.java:35) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1923385219038121986')
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: java.util.ArrayList[0])
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1728) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1353) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer._deserializeFromString(StdDeserializer.java:311) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.deserialize(MapDeserializer.java:444) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.deserialize(MapDeserializer.java:32) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer._deserializeFromArray(CollectionDeserializer.java:355) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:244) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:28) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper._convert(ObjectMapper.java:4388) ~[jackson-databind-2.13.5.jar:2.13.5]
+	... 53 common frames omitted
+
+2025-05-26 03:03:41.242  INFO 26768 --- [http-nio-8087-exec-4] c.s.w.r.s.i.RecommendationServiceImpl    : Personalized recommendation for fundAccount: 1923377329766207490, userRiskLevel: 1
+2025-05-26 03:03:41.243  INFO 26768 --- [http-nio-8087-exec-4] c.s.w.r.s.i.RecommendationServiceImpl    : Returning 6 recommendations for fundAccount: 1923377329766207490
+2025-05-26 03:03:53.891  INFO 26768 --- [http-nio-8087-exec-6] c.s.w.r.s.i.RecommendationServiceImpl    : Starting personalized recommendations for fundAccount: 1923377329766207490
+2025-05-26 03:03:53.937  INFO 25656 --- [http-nio-8086-exec-2] c.s.w.t.service.impl.QueryServiceImpl    : Fetching holdings for fundAccount: 1923377329766207490
+2025-05-26 03:03:53.971 ERROR 25656 --- [http-nio-8086-exec-2] c.s.w.t.service.impl.QueryServiceImpl    : Error processing trading accounts data for fundAccount 1923377329766207490: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1923385219038121986')
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: java.util.ArrayList[0]). Data: [1923385219038121986, 1926366569253429250, 1926368090665902082, 1926372011169890305, 1926376591983198209]
+
+java.lang.IllegalArgumentException: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1923385219038121986')
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: java.util.ArrayList[0])
+	at com.fasterxml.jackson.databind.ObjectMapper._convert(ObjectMapper.java:4393) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper.convertValue(ObjectMapper.java:4334) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.seme.wiseinvest.transaction.service.impl.QueryServiceImpl.getHoldingsByFundAccount(QueryServiceImpl.java:89) ~[classes/:na]
+	at com.seme.wiseinvest.transaction.controller.QueryController.getHoldingsByFundAccount(QueryController.java:35) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `java.util.LinkedHashMap` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1923385219038121986')
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: java.util.ArrayList[0])
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1728) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1353) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer._deserializeFromString(StdDeserializer.java:311) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.deserialize(MapDeserializer.java:444) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.deserialize(MapDeserializer.java:32) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer._deserializeFromArray(CollectionDeserializer.java:355) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:244) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:28) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectMapper._convert(ObjectMapper.java:4388) ~[jackson-databind-2.13.5.jar:2.13.5]
+	... 53 common frames omitted
+
+2025-05-26 03:03:54.003  INFO 26768 --- [http-nio-8087-exec-6] c.s.w.r.s.i.RecommendationServiceImpl    : Personalized recommendation for fundAccount: 1923377329766207490, userRiskLevel: 1
+2025-05-26 03:03:54.005  INFO 26768 --- [http-nio-8087-exec-6] c.s.w.r.s.i.RecommendationServiceImpl    : Returning 6 recommendations for fundAccount: 1923377329766207490
+2025-05-26 03:04:15.126  WARN 16892 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2025-05-26 03:04:15.127  WARN 16892 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2025-05-26 03:04:15.127  WARN 16892 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2025-05-26 03:04:15.127  WARN 31708 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2025-05-26 03:04:15.128  WARN 31708 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2025-05-26 03:04:15.127  WARN 31708 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2025-05-26 03:04:15.137  WARN 16892 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2025-05-26 03:04:15.139  WARN 31708 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2025-05-26 03:04:15.161  INFO 16892 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2025-05-26 03:04:15.170  WARN 31492 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2025-05-26 03:04:15.170  WARN 31492 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2025-05-26 03:04:15.170  WARN 31492 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2025-05-26 03:04:15.172  WARN 31492 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2025-05-26 03:04:15.172  INFO 16892 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2025-05-26 03:04:15.241  WARN 25860 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2025-05-26 03:04:15.241  WARN 25860 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2025-05-26 03:04:15.243  WARN 25860 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2025-05-26 03:04:15.247  WARN 25860 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2025-05-26 03:04:15.272  INFO 31492 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2025-05-26 03:04:15.280  INFO 31492 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2025-05-26 03:04:15.295  INFO 31708 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2025-05-26 03:04:15.300  INFO 31708 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2025-05-26 03:04:15.313  WARN 26768 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2025-05-26 03:04:15.313  WARN 26768 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2025-05-26 03:04:15.316  WARN 26768 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2025-05-26 03:04:15.322  WARN 26768 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2025-05-26 03:04:15.337  INFO 25860 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2025-05-26 03:04:15.341  INFO 25860 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2025-05-26 03:04:15.357  WARN 25656 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2025-05-26 03:04:15.358  WARN 25656 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2025-05-26 03:04:15.358  WARN 25656 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2025-05-26 03:04:15.361  WARN 25656 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2025-05-26 03:04:15.396  INFO 26768 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2025-05-26 03:04:15.400  INFO 26768 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2025-05-26 03:04:15.435  INFO 25656 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2025-05-26 03:04:15.439  INFO 25656 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2025-05-26 03:04:15.511  INFO 16892 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+2025-05-26 03:04:15.512  INFO 16892 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@761db8d1[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2025-05-26 03:04:15.512  INFO 16892 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1748198414260_127.0.0.1_58591
+2025-05-26 03:04:15.514  INFO 16892 --- [nacos-grpc-client-executor-313] c.a.n.c.remote.client.grpc.GrpcClient    : [1748198414260_127.0.0.1_58591]Ignore complete event,isRunning:false,isAbandon=false
+2025-05-26 03:04:15.526  INFO 16892 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@6e1a758a[Running, pool size = 8, active threads = 0, queued tasks = 0, completed tasks = 314]
+2025-05-26 03:04:15.617  INFO 31492 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+2025-05-26 03:04:15.617  INFO 31492 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@4b0129e6[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2025-05-26 03:04:15.618  INFO 31492 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1748198437847_127.0.0.1_58655
+2025-05-26 03:04:15.619  INFO 31492 --- [nacos-grpc-client-executor-292] c.a.n.c.remote.client.grpc.GrpcClient    : [1748198437847_127.0.0.1_58655]Ignore complete event,isRunning:false,isAbandon=false
+2025-05-26 03:04:15.625  INFO 31492 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@61d35e55[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 293]
+2025-05-26 03:04:15.633  INFO 31708 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+2025-05-26 03:04:15.633  INFO 31708 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@5016d144[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2025-05-26 03:04:15.634  INFO 31708 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1748198454944_127.0.0.1_58705
+2025-05-26 03:04:15.637  INFO 31708 --- [nacos-grpc-client-executor-291] c.a.n.c.remote.client.grpc.GrpcClient    : [1748198454944_127.0.0.1_58705]Ignore complete event,isRunning:false,isAbandon=false
+2025-05-26 03:04:15.637  INFO 31492 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-26 03:04:15.648  INFO 31708 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@756f5a5a[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 292]
+2025-05-26 03:04:15.679  INFO 25860 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+2025-05-26 03:04:15.680  INFO 25860 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@4818e3d8[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2025-05-26 03:04:15.680  INFO 31708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-26 03:04:15.680  INFO 25860 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1748198443642_127.0.0.1_58674
+2025-05-26 03:04:15.683  INFO 25860 --- [nacos-grpc-client-executor-291] c.a.n.c.remote.client.grpc.GrpcClient    : [1748198443642_127.0.0.1_58674]Ignore complete event,isRunning:false,isAbandon=false
+2025-05-26 03:04:15.689  INFO 25860 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@36bb045c[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 292]
+2025-05-26 03:04:15.698  INFO 25860 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-26 03:04:15.708  INFO 26768 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+2025-05-26 03:04:15.709  INFO 26768 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@1c467448[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2025-05-26 03:04:15.710  INFO 26768 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1748198467229_127.0.0.1_58745
+2025-05-26 03:04:15.712  INFO 26768 --- [nacos-grpc-client-executor-300] c.a.n.c.remote.client.grpc.GrpcClient    : [1748198467229_127.0.0.1_58745]Ignore complete event,isRunning:false,isAbandon=false
+2025-05-26 03:04:15.719  INFO 26768 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@32fe4cc1[Running, pool size = 7, active threads = 0, queued tasks = 0, completed tasks = 301]
+2025-05-26 03:04:15.750  INFO 25656 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+2025-05-26 03:04:15.750  INFO 25656 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@36d1c900[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2025-05-26 03:04:15.750  INFO 25656 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1748198479893_127.0.0.1_58765
+2025-05-26 03:04:15.753  INFO 25656 --- [nacos-grpc-client-executor-287] c.a.n.c.remote.client.grpc.GrpcClient    : [1748198479893_127.0.0.1_58765]Ignore complete event,isRunning:false,isAbandon=false
+2025-05-26 03:04:15.762  INFO 25656 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@1bd19eb3[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 288]
+2025-05-26 03:04:15.767  INFO 31492 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-26 03:04:15.777  INFO 25656 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-26 03:04:15.804  INFO 31708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-26 03:04:15.829  INFO 25860 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-26 03:04:15.902  INFO 25656 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
