@@ -15,7 +15,7 @@ export function fetchNetValue(productId: number, date: string) {
 }
 
 export function fetchTransactionDate() {
-    return request.get('/product/settle/system/transaction-date');
+    return request.get('/settle/settle/system/transaction-date');
 }
 
 export function apiAddProduct(product: Product) {
