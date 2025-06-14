@@ -20,21 +20,21 @@ instance.interceptors.response.use(
     }
 )
 
-// //添加请求拦截器
-// instance.interceptors.request.use(
-//     config=>{
-//         //在发送请求之前做什么
-//         let tokenStore = useTokenStore()
-//         //如果token中有值，在携带
-//         if(tokenStore.token){
-//             config.headers.Authorization=tokenStore.token
-//         }
-//         return config
-//     },
-//     err=>{
-//         //如果请求错误做什么
-//         Promise.reject(err)
-//     }
-// )
+//添加请求拦截器
+instance.interceptors.request.use(
+    config=>{
+        //在发送请求之前做什么
+        let tokenStore = useTokenStore()
+        //如果token中有值，在携带
+        if(tokenStore.token){
+            config.headers.Authorization=tokenStore.token
+        }
+        return config
+    },
+    err=>{
+        //如果请求错误做什么
+        Promise.reject(err)
+    }
+)
 
 export default instance;

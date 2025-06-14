@@ -121,6 +121,11 @@ const handleDialogClose = () => {
   padding: 2px;
   background-color: #cad1d82e;
   min-height: 86.4vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 使子元素水平居中 */
+  gap: 60px; /* 新增：设置子元素垂直间距 */
+  padding: 20px 0; /* 可选：增加容器内边距 */
 }
 
 .form-container {

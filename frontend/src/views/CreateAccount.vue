@@ -81,7 +81,6 @@
     </div>
   </div>
 </template>
-<<<<<<< Updated upstream
 
 <script setup lang="ts">
   import { ref } from 'vue';
@@ -316,5 +315,3 @@
   background-color: #f8f9fa;
 }
 </style>
-=======
->>>>>>> Stashed changes

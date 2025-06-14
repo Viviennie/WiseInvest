@@ -92,4 +92,15 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper, Customer> i
         return updateWrapper;
     }
 
+    @Override
+    public Customer findCustomerByFundAccount(Long fundAccount) {
+        if (fundAccount == null) {
+            return null;
+        }
+        QueryWrapper<Customer> queryWrapper = new QueryWrapper<>();
+        // 数据库中对应的列名是 fund_account (MyBatis Plus 会自动转换驼峰到下划线)
+        queryWrapper.eq("fund_account", fundAccount);
+        return customerMapper.selectOne(queryWrapper);
+    }
+
 }

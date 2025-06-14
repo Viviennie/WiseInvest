@@ -2,6 +2,7 @@ package com.seme.wiseinvest.api.client;
 
 import com.seme.wiseinvest.api.bo.SubscriptionBO;
 import com.seme.wiseinvest.api.bo.RedemptionBO;
+import com.seme.wiseinvest.common.domain.Result;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,4 +23,7 @@ public interface TransactionClient {
 
     @PostMapping("/transaction/redemption/confirm-batch")
     boolean confirmRedemptionBatch(@RequestBody Map<Long, Double> transactionIdToAmount);
+
+    @GetMapping("/query/holdings")
+    Result getHoldingsByFundAccount(@RequestParam("fundAccount") Long fundAccount);
 } 

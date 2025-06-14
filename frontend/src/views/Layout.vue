@@ -45,11 +45,7 @@ const form = ref({ ...userInfo });
 
     <!-- 右侧主内容区域 -->
     <el-container>
-<<<<<<< Updated upstream
-      <!-- 头部区域 -->
-      <el-header>
-        <div>欢迎 {{ form.name }} 进入系统  基金帐号：{{ form.fundAccount }}</div>
-=======
+
       <!-- 顶部区域：包含欢迎语与用户信息 -->
       <el-header class="main-header">
         <div class="header-container">
@@ -60,7 +56,6 @@ const form = ref({ ...userInfo });
             欢迎 {{ form.name }} 进入系统 基金帐号：{{ form.fundAccount }}
           </div>
         </div>
->>>>>>> Stashed changes
       </el-header>
 
       <!-- 主体内容区域：动态渲染子路由页面 -->
@@ -132,8 +127,6 @@ const form = ref({ ...userInfo });
   color: #f6bc00;
   background-color: #2E5077;
 }
-<<<<<<< Updated upstream
-=======
 
 /* 顶部 header 样式：内容居中、背景美化 */
 .main-header {
@@ -161,5 +154,4 @@ const form = ref({ ...userInfo });
   height: 60px;
   object-fit: contain;
 }
->>>>>>> Stashed changes
 </style>

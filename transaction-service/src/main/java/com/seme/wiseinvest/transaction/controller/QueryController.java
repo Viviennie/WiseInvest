@@ -1,14 +1,5 @@
 package com.seme.wiseinvest.transaction.controller;
 
-<<<<<<< Updated upstream
-import com.seme.wiseinvest.common.domain.Result;
-import com.seme.wiseinvest.transaction.service.QueryService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-@RestController
-@RequestMapping("/query")
-=======
 import com.seme.wiseinvest.common.domain.Result; // 通用结果封装类
 import com.seme.wiseinvest.transaction.domain.dto.HoldingDTO; // 持仓数据传输对象
 import com.seme.wiseinvest.transaction.service.QueryService; // 查询服务接口
@@ -19,7 +10,7 @@ import java.util.List;
 
 @RestController // 声明该类是一个 REST 控制器，返回值默认作为 JSON 响应体
 @RequestMapping("/query") // 为该控制器的所有方法设置统一的请求前缀
->>>>>>> Stashed changes
+
 public class QueryController {
 
     @Autowired
@@ -34,8 +25,6 @@ public class QueryController {
     public Result getTransactions(String fundAccount) {
         return Result.success(queryService.getTransactions(Long.parseLong(fundAccount))); // 返回封装的交易记录数据
     }
-<<<<<<< Updated upstream
-=======
 
     /**
      * 查询某个基金账户的持仓信息
@@ -47,5 +36,4 @@ public class QueryController {
         List<HoldingDTO> holdings = queryService.getHoldingsByFundAccount(fundAccount); // 调用服务层获取持仓数据
         return Result.success(holdings); // 返回封装的持仓数据结果
     }
->>>>>>> Stashed changes
 }

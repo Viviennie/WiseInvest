@@ -1,5 +1,6 @@
 package com.seme.wiseinvest.account.controller;
 
+import com.seme.wiseinvest.account.domain.Customer;
 import com.seme.wiseinvest.account.domain.dto.BankcardDTO;
 import com.seme.wiseinvest.account.domain.dto.UpdateInfoDTO;
 import com.seme.wiseinvest.account.service.AdminService;
@@ -92,5 +93,14 @@ public class AccountController {
     @GetMapping("/trading_accounts")
     public Result getTradingAccounts(@RequestParam String fundAccount){
         return Result.success(tradingAccountService.getTradingAccounts(Long.parseLong(fundAccount)));
+    }
+    @GetMapping("/customer/byFundAccount")
+    public Result getCustomerByFundAccount(@RequestParam Long fundAccount) {
+        Customer customer = customerService.findCustomerByFundAccount(fundAccount);
+        if (customer != null) {
+            // Customer 对象会被放入 Result 的 Object data 字段
+            return Result.success(customer);
+        }
+        return Result.error("未找到对应资金账号的客户信息");
     }
 }

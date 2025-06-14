@@ -4,11 +4,8 @@ import { ElMessage } from 'element-plus';
 import { fetchProducts, searchProducts, fetchNetValue, fetchTransactionDate } from '@/api/product';
 import type { Product } from '@/types/product';
 import { useRoute, useRouter } from 'vue-router';
-<<<<<<< Updated upstream
-=======
 import { fetchRecommendations } from '@/api/product'; // 导入推荐商品 API
 import { ArrowDownBold } from '@element-plus/icons-vue'
->>>>>>> Stashed changes
 
 // 搜索相关响应式变量
 const searchKeyword = ref('');
@@ -32,9 +29,8 @@ const transactionDate = ref<string | null>(null);
 const router = useRouter();
 const route = useRoute();
 
-<<<<<<< Updated upstream
+
 // Update paginatedProducts as computed property
-=======
 // 推荐产品相关变量
 const recommendedCurrentPage = ref(1);
 const recommendedPageSize = ref(5);
@@ -42,7 +38,6 @@ const recommendedTotal = ref(0);
 const recommendedProducts = ref<Product[]>([]); // 推荐商品列表
 
 // 当前页展示的产品（分页 + 搜索过滤）
->>>>>>> Stashed changes
 const paginatedProducts = computed(() => {
   let filteredProducts = products.value;
   if (appliedSearchKeyword.value) {
@@ -131,11 +126,10 @@ const Level = (level: number | undefined) => {
   }
 };
 
-<<<<<<< Updated upstream
 onMounted(() => {
   loadProducts();
   getTransactionDate();
-=======
+  
 // 获取推荐商品列表
 const getRecommendedProducts = async () => {
   try {
@@ -174,7 +168,6 @@ onMounted(() => {
   loadProducts();
   getTransactionDate();
   getRecommendedProducts();
->>>>>>> Stashed changes
 });
 
 // 跳转申购页
@@ -213,27 +206,26 @@ const redemption = (productId: number, productName: string) => {
       <el-button class="inputbutton" @click="handleSearch" style="margin-left: 20px;" type="primary">搜索</el-button>
     </div>
 
-    <!-- 表格 -->
-    <div class="table-container">
-      <el-table :data="paginatedProducts" style="width: 100%;">
-        <el-table-column prop="productName" label="产品名称" width="400" align="center"/>
-        <el-table-column prop="productType" label="产品类型" width="400" align="center"/>
-        <el-table-column prop="riskLevel" label="风险等级" width="300" align="center">
-          <template #default="scope">
-            <span>{{ Level(scope.row.riskLevel) }}</span>
-          </template>
-        </el-table-column>
-        <el-table-column label="操作" width="300" align="center">
-          <template #default="scope">
-            <el-button @click="showProductDetails(scope.row)" type="text">查看详情</el-button>
-            <el-button @click="subscription(scope.row.productId,scope.row.productName)" type="text">申购</el-button>
-            <el-button @click="redemption(scope.row.productId,scope.row.productName)" type="text">赎回</el-button>
-          </template>
-        </el-table-column>
-      </el-table>
-    </div>
+    <!-- 主产品表格 -->
+    <el-table :data="paginatedProducts" style="width: 100%; margin-bottom: 40px;">
+      <!-- 原有列定义保持完全不变 -->
+      <el-table-column prop="productName" label="产品名称" width="400" align="center"/>
+      <el-table-column prop="productType" label="产品类型" width="300" align="center"/>
+      <el-table-column prop="riskLevel" label="风险等级" width="300" align="center">
+        <template #default="scope">
+          <span>{{ Level(scope.row.riskLevel) }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="操作" width="300" align="center">
+        <template #default="scope">
+          <el-button @click="showProductDetails(scope.row)" type="text">查看详情</el-button>
+          <el-button @click="subscription(scope.row.productId,scope.row.productName)" type="text">申购</el-button>
+          <el-button @click="redemption(scope.row.productId,scope.row.productName)" type="text">赎回</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
 
-    <!-- 分页 -->
+    <!-- 分页保持原样 -->
     <div class="pagination-container" style="margin-top: 20px; display: flex; justify-content: center;">
       <el-pagination
           layout="prev, pager, next"
@@ -245,7 +237,42 @@ const redemption = (productId: number, productName: string) => {
       />
     </div>
 
-    <!-- 产品详情对话框 -->
+    <!-- 推荐商品 -->
+    <div class="recommendation-section" v-if="recommendedProducts.length > 0" style="margin-top: 20px;">
+      <div class="title-container">
+        <h3 style="color: #0b407ce0; margin: 0px">推荐商品</h3>
+        <el-icon :size="20" color="#0b407ce0" class="hand-icon">
+          <ArrowDownBold />
+        </el-icon>
+      </div>
+      <el-table :data="recommendedPaginated" style="width: 100%;">
+        <el-table-column prop="productName" label="产品名称" width="400" align="center"/>
+        <el-table-column prop="productType" label="产品类型" width="300" align="center"/>
+        <el-table-column prop="riskLevel" label="风险等级" width="300" align="center">
+          <template #default="scope">
+            <span>{{ Level(scope.row.riskLevel) }}</span>
+          </template>
+        </el-table-column>
+        <el-table-column label="操作" width="300" align="center">
+          <template #default="scope">
+            <el-button @click="showProductDetails(scope.row)" type="text">查看详情</el-button>
+            <el-button @click="subscription(scope.row.productId,scope.row.productName)" type="text">申购</el-button>
+          </template>
+        </el-table-column>
+      </el-table>
+      <div class="pagination-container" style="margin-top: 20px; display: flex; justify-content: center;">
+        <el-pagination
+            layout="prev, pager, next"
+            :total="recommendedTotal"
+            :page-size="recommendedPageSize"
+            :current-page="recommendedCurrentPage"
+            @current-change="handleRecommendedPageChange"
+            background
+        />
+      </div>
+    </div>
+
+    <!-- 原有对话框保持完全不变 -->
     <el-dialog
         v-model="dialogVisible"
         :title="selectedProduct ? selectedProduct.productName : '产品详情'"
@@ -254,6 +281,7 @@ const redemption = (productId: number, productName: string) => {
         top="15vh"
         @close="clearSelectedProduct"
     >
+      <!-- 对话框内容保持不变 -->
       <div v-if="selectedProduct" class="product-details-content">
         <dl class="product-info">
           <dt>产品名称：</dt><dd>{{ selectedProduct.productName }}</dd>
@@ -272,8 +300,46 @@ const redemption = (productId: number, productName: string) => {
 </template>
 
 <style scoped>
-.table-container {
-  margin-top: 20px;
+.main-container {
+  width: 99.9%;
+  min-height: 100vh; /* 改为最小高度 */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 修改2：添加间距 */
+.el-table {
+  margin-bottom: 40px;
+}
+
+/* 修改3：推荐商品区域调整 */
+.recommendation-section {
+  border-top: 2px solid #f0f0f0;
+  padding-top: 40px;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: -10px 0 20px;
+}
+
+/* 手指图标动画 */
+.hand-icon {
+  animation: point-down 1.5s infinite;
+  transform-origin: center;
+  cursor: pointer;
+}
+
+@keyframes point-down {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
 }
 
 .product-details-content {
@@ -319,5 +385,15 @@ const redemption = (productId: number, productName: string) => {
 .dialog-footer .el-button:active {
   background-color: #3A8EE6;
   transform: translateY(1px);
+}
+
+/* 新增推荐商品间距 */
+.recommendation-section {
+  margin-top: 40px;
+  border-top: 1px solid #eee;
+  padding-top: 30px;
+}
+.recommendation-section .pagination-container {
+  margin: 15px 0 10px;
 }
 </style>
