@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController // 声明该类是一个 REST 控制器，返回值默认作为 JSON 响应体
 @RequestMapping("/query") // 为该控制器的所有方法设置统一的请求前缀
+
 public class QueryController {
 
     @Autowired

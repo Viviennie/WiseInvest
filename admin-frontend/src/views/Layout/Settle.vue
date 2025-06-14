@@ -1,11 +1,31 @@
 <script lang="ts" setup>
+/**
+ * 模拟清算流程页面脚本
+ *
+ * @description 实现清算日流程操作，包括日初始化、接收行情数据、确认申购赎回、停止申请、导出数据等。
+ * 页面包含时间轴组件，结合系统状态动态控制按钮行为与时间轴状态。
+ *
+ * @author 闫雯晴
+ * @since 2025-05-25
+ */
+
 import { onMounted, ref } from 'vue'
-import { initializeDayService, receiveMarketDataService, confirmSubscriptionDataService, confirmRedemptionDataService,
-  stopDailyApplicationsService, exportDataService, getSystemService } from '@/api/settle' // 导入 API 服务函数
+import {
+  initializeDayService,
+  receiveMarketDataService,
+  confirmSubscriptionDataService,
+  confirmRedemptionDataService,
+  stopDailyApplicationsService,
+  exportDataService,
+  getSystemService
+} from '@/api/settle' // 导入 API 服务函数
 import { ElMessage } from 'element-plus'
 import { MoreFilled } from '@element-plus/icons-vue'
 
-
+/**
+ * 初始化交易日流程
+ * @returns Promise<void>
+ */
 const initializeDay = async () => {
   try {
     await initializeDayService()
@@ -15,6 +35,10 @@ const initializeDay = async () => {
   }
 }
 
+/**
+ * 接收行情数据
+ * @returns Promise<void>
+ */
 const receiveMarketData = async () => {
   try {
     await receiveMarketDataService()
@@ -24,6 +48,10 @@ const receiveMarketData = async () => {
   }
 }
 
+/**
+ * 确认申购数据
+ * @returns Promise<void>
+ */
 const confirmSubscriptionData = async () => {
   try {
     await confirmSubscriptionDataService()
@@ -33,6 +61,10 @@ const confirmSubscriptionData = async () => {
   }
 };
 
+/**
+ * 确认赎回数据
+ * @returns Promise<void>
+ */
 const confirmRedemptionData = async () => {
   try {
     await confirmRedemptionDataService()
@@ -42,6 +74,10 @@ const confirmRedemptionData = async () => {
   }
 };
 
+/**
+ * 停止当日申请
+ * @returns Promise<void>
+ */
 const stopDailyApplications = async () => {
   try {
     await stopDailyApplicationsService()
@@ -51,6 +87,10 @@ const stopDailyApplications = async () => {
   }
 };
 
+/**
+ * 导出当日数据
+ * @returns Promise<void>
+ */
 const exportData = async () => {
   try {
     await exportDataService()
@@ -60,6 +100,7 @@ const exportData = async () => {
   }
 };
 
+// 定义时间轴数据（五个阶段的操作节点）
 const timelineData = ref([
   {
     content: '接收行情数据',
@@ -92,60 +133,76 @@ const timelineData = ref([
     action: exportData,
   }
 ])
-const ourSystem = ref();
-const action = ref();
 
+const ourSystem = ref(); // 当前系统状态数据
+const action = ref();     // 当前操作状态（按钮文案）
+
+/**
+ * 页面主按钮点击事件，根据当前流程阶段执行相应动作
+ */
 const click = async () => {
-  if(action.value === "日初始化"){
+  if (action.value === "日初始化") {
     await initializeDay();
+    // 重置时间轴颜色
     timelineData.value[0].color = '#409EFF';
     timelineData.value[1].color = '#409EFF';
     timelineData.value[2].color = '#409EFF';
     timelineData.value[3].color = '#409EFF';
     timelineData.value[4].color = '#409EFF';
     action.value = "接收数据";
+
     const res = await getSystemService();
     ourSystem.value = res.data;
     const originalDate = new Date(ourSystem.value.transactionDate);
-    originalDate.setHours(originalDate.getHours() + 8); // 加8小时
-    ourSystem.value.transactionDate = originalDate.toLocaleDateString('en-CA'); // 格式化为 YYYY-MM-DD
-  }else if(action.value === "接收数据"){
+    originalDate.setHours(originalDate.getHours() + 8); // 转为本地时间
+    ourSystem.value.transactionDate = originalDate.toLocaleDateString('en-CA'); // 格式 YYYY-MM-DD
+
+  } else if (action.value === "接收数据") {
     await receiveMarketData();
-    timelineData.value[0].color = '#0bbd87';
+    timelineData.value[0].color = '#0bbd87'; // 绿色表示完成
     action.value = "停止申请";
-  }else if(action.value === "停止申请"){
+
+  } else if (action.value === "停止申请") {
     await stopDailyApplications();
     timelineData.value[1].color = '#0bbd87';
     timelineData.value[2].color = '#0bbd87';
     timelineData.value[3].color = '#0bbd87';
     action.value = "导出数据";
-  }else if(action.value === "导出数据"){
+
+  } else if (action.value === "导出数据") {
     await exportData();
     timelineData.value[4].color = '#0bbd87';
     action.value = "日初始化";
-  }else {
+
+  } else {
     ElMessage.error('操作失败');
   }
 }
+
+/**
+ * 获取系统状态并根据状态判断下一步操作与时间轴高亮
+ */
 const getSystem = async () => {
   const res = await getSystemService();
   ourSystem.value = res.data;
   console.log(ourSystem.value);
+
   const originalDate = new Date(ourSystem.value.transactionDate);
-  originalDate.setHours(originalDate.getHours() + 8); // 加8小时
-  ourSystem.value.transactionDate = originalDate.toLocaleDateString('en-CA'); // 格式化为 YYYY-MM-DD
-  if(!ourSystem.value.hasReceivedMarketData){
+  originalDate.setHours(originalDate.getHours() + 8);
+  ourSystem.value.transactionDate = originalDate.toLocaleDateString('en-CA');
+
+  if (!ourSystem.value.hasReceivedMarketData) {
     action.value = "接收数据"
-  }else if(!ourSystem.value.hasStoppedApplication){
+  } else if (!ourSystem.value.hasStoppedApplication) {
     action.value = "停止申请"
     timelineData.value[0].color = '#0bbd87';
-  }else if(!ourSystem.value.hasExportedApplicationData){
+  } else if (!ourSystem.value.hasExportedApplicationData) {
     action.value = "导出数据"
     timelineData.value[0].color = '#0bbd87';
     timelineData.value[1].color = '#0bbd87';
     timelineData.value[2].color = '#0bbd87';
     timelineData.value[3].color = '#0bbd87';
-  }else{
+  } else {
     action.value = "日初始化"
     timelineData.value[0].color = '#0bbd87';
     timelineData.value[1].color = '#0bbd87';
@@ -154,7 +211,10 @@ const getSystem = async () => {
     timelineData.value[4].color = '#0bbd87';
   }
 }
+
+// 初始化系统状态（页面加载时调用）
 getSystem();
+
 </script>
 
 <template>

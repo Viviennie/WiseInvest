@@ -25,5 +25,6 @@ export function exportDataService() {
 }
 
 export function getSystemService() {
+
     return request.get('/settle/settle');
 }
