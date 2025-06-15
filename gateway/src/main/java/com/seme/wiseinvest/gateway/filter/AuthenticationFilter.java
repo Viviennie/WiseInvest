@@ -49,20 +49,19 @@ public class AuthenticationFilter implements GlobalFilter, Ordered {
             // 这个方法返回的是顶层 "claims" 声明内部的 Map
             Map<String, Object> innerClaimsMap = JwtUtil.parseToken(jwt);
 
-            // 从解析出的内部 Map 中获取 fundAccount
-            if (innerClaimsMap == null || !innerClaimsMap.containsKey("fundAccount")) {
-                exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
-                return exchange.getResponse().setComplete();
-            }
-            String fundAccount = (String) innerClaimsMap.get("fundAccount");
+            // 修改校验逻辑：fundAccount 或 adminAccount 任意一个存在即可
+            boolean hasFundAccount = innerClaimsMap != null && innerClaimsMap.containsKey("fundAccount") && StringUtils.hasText((String) innerClaimsMap.get("fundAccount"));
+            boolean hasAdminAccount = innerClaimsMap != null && innerClaimsMap.containsKey("adminAccount") && StringUtils.hasText((String) innerClaimsMap.get("adminAccount"));
 
-            if (!StringUtils.hasText(fundAccount)) {
+            if (!hasFundAccount && !hasAdminAccount) {
                 exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
                 return exchange.getResponse().setComplete();
             }
 
+            // 优先将 fundAccount 放入请求头，如果没有则放 adminAccount
             ServerHttpRequest modifiedRequest = request.mutate()
-                    .header("X-Fund-Account", fundAccount) // 将 fundAccount 放入请求头
+                    .header("X-Fund-Account", hasFundAccount ? (String) innerClaimsMap.get("fundAccount") : "")
+                    .header("X-Admin-Account", hasAdminAccount ? (String) innerClaimsMap.get("adminAccount") : "")
                     .build();
 
             return chain.filter(exchange.mutate().request(modifiedRequest).build());

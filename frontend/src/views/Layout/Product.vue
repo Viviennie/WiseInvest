@@ -126,9 +126,6 @@ const Level = (level: number | undefined) => {
   }
 };
 
-onMounted(() => {
-  loadProducts();
-  getTransactionDate();
   
 // 获取推荐商品列表
 const getRecommendedProducts = async () => {
