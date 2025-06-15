@@ -105,5 +105,6 @@ public class RecommendationServiceImplTest {
 
         assertEquals(1, result.size());
         assertEquals(p1.getProductId(), result.get(0).getProductId());
+
     }
 }

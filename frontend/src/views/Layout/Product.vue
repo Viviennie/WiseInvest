@@ -29,6 +29,8 @@ const transactionDate = ref<string | null>(null);
 const router = useRouter();
 const route = useRoute();
 
+
+// Update paginatedProducts as computed property
 // 推荐产品相关变量
 const recommendedCurrentPage = ref(1);
 const recommendedPageSize = ref(5);
@@ -124,6 +126,7 @@ const Level = (level: number | undefined) => {
   }
 };
 
+  
 // 获取推荐商品列表
 const getRecommendedProducts = async () => {
   try {
