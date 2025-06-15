@@ -10,83 +10,101 @@ import com.seme.wiseinvest.product.domain.Product;
 import com.seme.wiseinvest.transaction.domain.dto.HoldingDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.*;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-/**
- * RecommendationServiceImpl 的单元测试类
- * 用于验证推荐逻辑在不同输入条件下的正确性
- */
 public class RecommendationServiceImplTest {
 
-    private RecommendationServiceImpl recommendationService;
-    private AccountClient accountClient;
-    private ProductClient productClient;
-    private TransactionClient transactionClient;
+    @Mock private AccountClient accountClient;
+    @Mock private ProductClient productClient;
+    @Mock private TransactionClient transactionClient;
 
-    /**
-     * 测试初始化方法
-     * 使用 Mockito 创建 mock 对象，注入到 RecommendationServiceImpl 实例中
-     */
+    @InjectMocks private RecommendationServiceImpl recommendationService;
+
+    @Captor ArgumentCaptor<Long> longCaptor;
+
     @BeforeEach
-    public void setup() {
-        accountClient = mock(AccountClient.class);
-        productClient = mock(ProductClient.class);
-        transactionClient = mock(TransactionClient.class);
-        recommendationService = new RecommendationServiceImpl(accountClient, productClient, transactionClient);
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
     }
 
-    /**
-     * 测试场景：给定有效的 fundAccount，且用户风险等级、持仓、产品列表等数据均合法
-     * 预期行为：返回一条推荐产品（符合条件、未持有、风险等级匹配）
-     */
     @Test
-    public void testGetPersonalizedRecommendations_withValidAccount() {
+    void getPersonalizedRecommendations_shouldReturnFallbackHotPicks_whenCustomerNotFound() {
+        Long fundAccount = 10086L;
+
+        // Mock返回：客户信息为空
+        when(accountClient.getCustomerByFundAccount(fundAccount))
+                .thenReturn(Result.error("Not found"));
+
+        // Mock持仓为空
+        when(transactionClient.getHoldingsByFundAccount(fundAccount))
+                .thenReturn(Result.success(List.of()));
+
+        Product hot1 = new Product();
+        hot1.setProductId(1L);
+        hot1.setProductRating(5.0);
+        hot1.setProductAum(10000.0);
+        hot1.setProductStatus(1);
+
+        Product hot2 = new Product();
+        hot2.setProductId(2L);
+        hot2.setProductRating(4.8);
+        hot2.setProductAum(9000.0);
+        hot2.setProductStatus(1);
+
+        when(productClient.getAllProducts()).thenReturn(Result.success(List.of(hot1, hot2)));
+
+        List<Product> result = recommendationService.getPersonalizedRecommendations(fundAccount);
+
+        assertEquals(2, result.size());
+        assertTrue(result.contains(hot1));
+    }
+
+    @Test
+    void getPersonalizedRecommendations_shouldFilterAndLimitByRisk() {
         Long fundAccount = 10001L;
 
-        // 模拟用户信息（风险等级为 3）
+        // Mock客户信息
         Customer customer = new Customer();
         customer.setRiskLevel(3);
-        Result customerResult = Result.success(customer);
-        when(accountClient.getCustomerByFundAccount(fundAccount)).thenReturn(customerResult);
+        when(accountClient.getCustomerByFundAccount(fundAccount))
+                .thenReturn(Result.success(customer));
 
-        // 模拟持仓信息（持有 productId=101）
-        List<HoldingDTO> holdings = Arrays.asList(new HoldingDTO(101, "acc-1"));
-        Result holdingResult = Result.success(holdings);
-        when(transactionClient.getHoldingsByFundAccount(fundAccount)).thenReturn(holdingResult);
+        // Mock持仓
+        HoldingDTO h = new HoldingDTO();
+        h.setProductId(2);
+        when(transactionClient.getHoldingsByFundAccount(fundAccount))
+                .thenReturn(Result.success(List.of(h)));
 
-        // 模拟产品信息（提供一个符合推荐条件的产品 productId=102）
-        Product product1 = new Product();
-        product1.setProductId(102);
-        product1.setRiskLevel(2);
-        product1.setProductStatus(1); // 正常状态
-        product1.setProductRating(4.5);
-        product1.setProductAum(1000.0);
-        Result productResult = Result.success(Arrays.asList(product1));
-        when(productClient.getAllProducts()).thenReturn(productResult);
+        // Mock产品列表
+        Product p1 = new Product(); // 合规产品
+        p1.setProductId(1L);
+        p1.setProductStatus(1);
+        p1.setRiskLevel(2);
+        p1.setProductRating(4.9);
+        p1.setProductAum(9000.0);
 
-        // 执行推荐逻辑
-        List<Product> recommended = recommendationService.getPersonalizedRecommendations(fundAccount);
+        Product p2 = new Product(); // 已持仓，应被过滤
+        p2.setProductId(2L);
+        p2.setProductStatus(1);
+        p2.setRiskLevel(2);
 
-        // 验证推荐结果
-        assertNotNull(recommended); // 不为 null
-        assertFalse(recommended.isEmpty()); // 不为空
-        assertEquals(1, recommended.size()); // 正好一个推荐
-        assertEquals(product1.getProductId(), recommended.get(0).getProductId()); // ID 匹配
-    }
+        Product p3 = new Product(); // 风险等级过高
+        p3.setProductId(3L);
+        p3.setProductStatus(1);
+        p3.setRiskLevel(5);
 
-    /**
-     * 测试场景：输入的 fundAccount 为 null
-     * 预期行为：返回空的推荐结果列表
-     */
-    @Test
-    public void testGetPersonalizedRecommendations_withNullFundAccount() {
-        List<Product> result = recommendationService.getPersonalizedRecommendations(null);
-        assertTrue(result.isEmpty());
+        when(productClient.getAllProducts()).thenReturn(Result.success(List.of(p1, p2, p3)));
+
+        List<Product> result = recommendationService.getPersonalizedRecommendations(fundAccount);
+
+        assertEquals(1, result.size());
+        assertEquals(p1.getProductId(), result.get(0).getProductId());
+
     }
 }
