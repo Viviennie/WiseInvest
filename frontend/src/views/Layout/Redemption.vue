@@ -99,10 +99,11 @@ const handleDialogClose = () => {
       <el-form-item>
         <el-button type="primary" @click="submitRedemption" style="margin-right: 30px;">提交</el-button>
         <el-button type="warning" @click="resetForm" style="margin-right: 30px;">重置</el-button>
-        <el-button type="danger" @click="router.push('/product');" style="margin-right: 30px;">取消</el-button>
+        <el-button type="default" @click="router.push('/product');" style="margin-right: 30px;">返回</el-button>
       </el-form-item>
-      <el-dialog v-model:visible="dialogVisible" title="交易信息" @close="handleDialogClose">
+      <el-dialog v-model="dialogVisible" title="赎回成功" @close="handleDialogClose">
         <div>
+          <p style="color: #67C23A; font-weight: bold;">赎回成功！</p>
           <p>交易 ID: {{ transactionId }}</p>
           <p>产品名称: {{ form.productName }}</p>
           <p>交易账户: {{ form.tradingAccountId }}</p>
