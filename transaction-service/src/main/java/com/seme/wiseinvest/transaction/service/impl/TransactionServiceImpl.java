@@ -28,10 +28,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 @RequiredArgsConstructor
 public class TransactionServiceImpl implements TransactionService {
+
+    private static final Logger logger = LoggerFactory.getLogger(TransactionServiceImpl.class);
+
     private final SubscriptionMapper subscriptionMapper;
     private final RedemptionMapper redemptionMapper;
     private final HoldingMapper holdingMapper;
@@ -193,9 +198,12 @@ public class TransactionServiceImpl implements TransactionService {
                 holding.setTradingAccountId(subscription.getTradingAccountId());
                 holding.setProductId(subscription.getProductId());
                 holding.setShares(entry.getValue());
-                holdingMapper.insert(holding);
+                logger.info("即将插入 holding: {}", holding);
+                int rows = holdingMapper.insert(holding);
+                logger.info("插入 holding 影响行数: {}", rows);
             } else {
                 holding.setShares(holding.getShares() + entry.getValue());
+                logger.info("即将更新 holding: {}", holding);
                 holdingMapper.updateById(holding);
             }
         }
