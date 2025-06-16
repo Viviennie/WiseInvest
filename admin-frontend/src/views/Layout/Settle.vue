@@ -149,7 +149,7 @@ const click = async () => {
     timelineData.value[2].color = '#409EFF';
     timelineData.value[3].color = '#409EFF';
     timelineData.value[4].color = '#409EFF';
-    action.value = "接收数据";
+    action.value = "接受行情";
 
     const res = await getSystemService();
     ourSystem.value = res.data;
@@ -157,15 +157,23 @@ const click = async () => {
     originalDate.setHours(originalDate.getHours() + 8); // 转为本地时间
     ourSystem.value.transactionDate = originalDate.toLocaleDateString('en-CA'); // 格式 YYYY-MM-DD
 
-  } else if (action.value === "接收数据") {
+  } else if (action.value === "接受行情") {
     await receiveMarketData();
     timelineData.value[0].color = '#0bbd87'; // 绿色表示完成
+    action.value = "申购清算";
+
+  } else if (action.value === "申购清算") {
+    await confirmSubscriptionData();
+    timelineData.value[1].color = '#0bbd87';
+    action.value = "赎回清算";
+
+  } else if (action.value === "赎回清算") {
+    await confirmRedemptionData();
+    timelineData.value[2].color = '#0bbd87';
     action.value = "停止申请";
 
   } else if (action.value === "停止申请") {
     await stopDailyApplications();
-    timelineData.value[1].color = '#0bbd87';
-    timelineData.value[2].color = '#0bbd87';
     timelineData.value[3].color = '#0bbd87';
     action.value = "导出数据";
 
@@ -192,10 +200,19 @@ const getSystem = async () => {
   ourSystem.value.transactionDate = originalDate.toLocaleDateString('en-CA');
 
   if (!ourSystem.value.hasReceivedMarketData) {
-    action.value = "接收数据"
+    action.value = "接受行情"
+  } else if (!ourSystem.value.hasConfirmedSubscription) {
+    action.value = "申购清算"
+    timelineData.value[0].color = '#0bbd87';
+  } else if (!ourSystem.value.hasConfirmedRedemption) {
+    action.value = "赎回清算"
+    timelineData.value[0].color = '#0bbd87';
+    timelineData.value[1].color = '#0bbd87';
   } else if (!ourSystem.value.hasStoppedApplication) {
     action.value = "停止申请"
     timelineData.value[0].color = '#0bbd87';
+    timelineData.value[1].color = '#0bbd87';
+    timelineData.value[2].color = '#0bbd87';
   } else if (!ourSystem.value.hasExportedApplicationData) {
     action.value = "导出数据"
     timelineData.value[0].color = '#0bbd87';
