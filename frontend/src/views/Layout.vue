@@ -40,6 +40,9 @@ const form = ref({ ...userInfo });
         <el-menu-item index="/transactions">
           <span>交易记录</span>
         </el-menu-item>
+        <el-menu-item index="/chatbot">
+          <span>智慧客服</span>
+        </el-menu-item>
       </el-menu>
     </el-aside>
 
@@ -64,7 +67,7 @@ const form = ref({ ...userInfo });
       </el-main>
 
       <!-- 底部区域 -->
-      <el-footer>—— ——</el-footer>
+
     </el-container>
   </el-container>
 </template>
