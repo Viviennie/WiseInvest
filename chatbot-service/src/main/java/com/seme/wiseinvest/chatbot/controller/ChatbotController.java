@@ -3,16 +3,17 @@ package com.seme.wiseinvest.chatbot.controller;
 import com.seme.wiseinvest.chatbot.domain.dto.ChatRequestDTO;
 import com.seme.wiseinvest.chatbot.domain.vo.ChatReplyVO;
 import com.seme.wiseinvest.chatbot.service.ChatbotService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/chat")
+@RequestMapping("/chatbot")
+@RequiredArgsConstructor
 public class ChatbotController {
-    @Autowired
-    private ChatbotService chatbotService;
+    private final ChatbotService chatbotService;
 
-    @PostMapping
+    @PostMapping("/chat")
     public ChatReplyVO chat(@RequestBody ChatRequestDTO requestDTO) {
         return chatbotService.getReply(requestDTO);
     }

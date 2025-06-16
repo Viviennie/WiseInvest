@@ -86,30 +86,16 @@ public class QueryServiceImpl implements QueryService {
             Result tradingAccountsResult = accountClient.getTradingAccounts(fundAccount.toString());
             if (tradingAccountsResult != null && tradingAccountsResult.getCode() == 0 && tradingAccountsResult.getData() != null) {
                 try {
-                    List<Map<String, Object>> rawTradingAccounts = objectMapper.convertValue(
-                            tradingAccountsResult.getData(),
-                            new TypeReference<List<Map<String, Object>>>(){}
-                    );
+                    logger.info("Raw tradingAccountsResult.getData(): {}", tradingAccountsResult.getData());
+                    logger.info("Raw tradingAccountsResult.getData() class: {}", tradingAccountsResult.getData().getClass());
 
-                    for (Map<String, Object> accMap : rawTradingAccounts) {
-                        Object taIdObj = accMap.get("tradingAccountId");
-                        if (taIdObj instanceof Number) {
-                            tradingAccountIds.add(((Number) taIdObj).longValue());
-                        } else if (taIdObj instanceof String) {
-                            try {
-                                tradingAccountIds.add(Long.parseLong((String)taIdObj));
-                            } catch (NumberFormatException nfe) {
-                                logger.warn("Could not parse tradingAccountId: {} from map: {}", taIdObj, accMap);
-                            }
-                        } else {
-                            logger.warn("tradingAccountId is of unexpected type or null in map: {}", accMap);
-                        }
-                    }
-                    logger.debug("Found tradingAccountIds: {} for fundAccount: {}", tradingAccountIds, fundAccount);
-                } catch (Exception e) { // Catch broader exception from convertValue or casting
-                    logger.error("Error processing trading accounts data for fundAccount {}: {}. Data: {}",
-                            fundAccount, e.getMessage(), tradingAccountsResult.getData(), e);
-                    return Collections.emptyList();
+                    List<Long> tradingAccountIdList = objectMapper.convertValue(
+                            tradingAccountsResult.getData(),
+                            new TypeReference<List<Long>>() {}
+                    );
+                    tradingAccountIds.addAll(tradingAccountIdList);
+                } catch (Exception e) {
+                    logger.error("Error processing trading accounts data for fundAccount {}: {}", fundAccount, e.getMessage(), e);
                 }
             } else {
                 logger.warn("No trading accounts found or error from AccountClient for fundAccount {}. Response: code={}, msg={}",
