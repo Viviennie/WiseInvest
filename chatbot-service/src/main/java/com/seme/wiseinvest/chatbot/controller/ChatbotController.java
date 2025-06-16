@@ -15,6 +15,8 @@ public class ChatbotController {
 
     @PostMapping("/chat")
     public ChatReplyVO chat(@RequestBody ChatRequestDTO requestDTO) {
+        System.out.println("requestDTO: " + requestDTO);
         return chatbotService.getReply(requestDTO);
     }
+    
 }
